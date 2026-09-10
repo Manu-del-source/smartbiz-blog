@@ -2,7 +2,7 @@
 title: "How a Hotel Website Can Help Increase Direct Bookings"
 description: "Many hotels rely heavily on Online Travel Agencies (OTAs) like Booking.com or Expedia. While these platforms provide vis..."
 slug: "hotel-website-increase-direct-bookings"
-category: "Case Studies"
+category: "Guides"
 tags: ["Hospitality","Web Design","Bookings"]
 author: "SmartBiz Team"
 publishedAt: "2023-10-25"

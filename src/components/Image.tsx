@@ -36,7 +36,7 @@ export default function Image({
   const generatedSrcSet = srcSet || `${src}?w=400 400w, ${src}?w=800 800w, ${src}?w=1200 1200w`;
 
   return (
-    <div className={cn("relative overflow-hidden bg-gray-100 dark:bg-gray-800", wrapperClassName)}>
+    <div className={cn("relative overflow-hidden bg-paper-dim dark:bg-night-dim", wrapperClassName)}>
       <img
         ref={imgRef}
         src={src}
@@ -52,7 +52,7 @@ export default function Image({
       {/* Blur-up placeholder overlay */}
       <div 
         className={cn(
-          "absolute inset-0 bg-gray-200/50 dark:bg-gray-800/50 backdrop-blur-xl transition-opacity duration-700 ease-in-out pointer-events-none",
+          "absolute inset-0 bg-paper-dim/60 dark:bg-night-dim/60 backdrop-blur-xl transition-opacity duration-700 ease-in-out pointer-events-none",
           isLoaded ? "opacity-0" : "opacity-100"
         )}
         aria-hidden="true"

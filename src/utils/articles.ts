@@ -14,7 +14,11 @@ interface FrontmatterAttrs {
 }
 
 // Use Vite's import.meta.glob to load all markdown files in the articles directory
-const modules = import.meta.glob('../content/articles/*.md', { as: 'raw', eager: true });
+const modules = import.meta.glob('../content/articles/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
 
 export function getAllArticles(): Article[] {
   const articles: Article[] = [];

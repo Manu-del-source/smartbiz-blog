@@ -4,7 +4,7 @@
  */
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ThemeProvider } from './components/ThemeProvider';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
@@ -19,28 +19,50 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
+const SITE_URL = 'https://blog.smartbiz365.site';
+
+const siteJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SmartBiz',
+    url: 'https://smartbiz365.site/',
+    logo: `${SITE_URL}/favicon.svg`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SmartBiz Blog',
+    url: `${SITE_URL}/`,
+    publisher: { '@type': 'Organization', name: 'SmartBiz' },
+  },
+];
+
 export default function App() {
   return (
     <ThemeProvider>
       <HelmetProvider>
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(siteJsonLd)}</script>
+        </Helmet>
         <Router>
           <ScrollToTop />
-          <div className="flex flex-col min-h-screen font-sans bg-white dark:bg-gray-950 transition-colors duration-200">
+          <div className="flex min-h-screen flex-col bg-paper font-sans text-ink transition-colors dark:bg-night dark:text-paper-ink">
             <Navbar />
             <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/category/:category" element={<CategoryView />} />
-              <Route path="/:slug" element={<ArticleView />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/search" element={<Search />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/category/:category" element={<CategoryView />} />
+                <Route path="/:slug" element={<ArticleView />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
       </HelmetProvider>
     </ThemeProvider>
   );

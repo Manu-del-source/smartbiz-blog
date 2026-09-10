@@ -2,7 +2,7 @@
 title: "How Restaurants Can Use a Website to Attract More Customers"
 description: "When people are hungry, they search online. If your restaurant doesn't have a strong digital presence, you are losing cu..."
 slug: "restaurant-website-attract-customers"
-category: "Case Studies"
+category: "Guides"
 tags: ["Restaurants","Web Design","Marketing"]
 author: "SmartBiz Team"
 publishedAt: "2023-10-30"

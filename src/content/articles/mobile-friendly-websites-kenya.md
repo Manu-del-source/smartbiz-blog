@@ -2,7 +2,7 @@
 title: "Mobile-Friendly Websites: Why They Matter for Kenyan Businesses"
 description: "In Kenya, the internet is primarily accessed via mobile phones. If your website is only designed for a desktop computer ..."
 slug: "mobile-friendly-websites-kenya"
-category: "Technology"
+category: "Web Design"
 tags: ["Mobile","Responsive Design","UX"]
 author: "SmartBiz Team"
 publishedAt: "2023-11-10"

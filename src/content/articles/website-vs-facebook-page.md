@@ -2,7 +2,7 @@
 title: "Website vs Facebook Page: Which Does Your Business Need?"
 description: "Many Kenyan businesses start their online journey with a Facebook or Instagram page. It's free, easy to set up, and reac..."
 slug: "website-vs-facebook-page"
-category: "Digital Marketing"
+category: "Business"
 tags: ["Social Media","Web Design","Marketing"]
 author: "SmartBiz Team"
 publishedAt: "2023-10-10"

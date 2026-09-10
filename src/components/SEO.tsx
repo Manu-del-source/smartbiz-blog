@@ -15,7 +15,7 @@ export default function SEO({
   title, 
   description, 
   url = 'https://blog.smartbiz365.site', 
-  image = 'https://blog.smartbiz365.site/placeholder.svg', 
+  image = 'https://blog.smartbiz365.site/og-image.svg', 
   type = 'website',
   publishedAt,
   author

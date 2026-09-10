@@ -1,63 +1,67 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import { ArrowRight, Globe, Mail, Phone } from 'lucide-react';
+import { ArrowRight, Globe, Mail, MapPin } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div className="bg-white dark:bg-gray-950 min-h-screen pb-20 transition-colors duration-200">
-      <SEO 
-        title="Contact SmartBiz | Web Design & SEO" 
-        description="Get in touch with SmartBiz for professional web design and SEO services in Kenya." 
+    <div className="min-h-screen bg-paper pb-20 transition-colors dark:bg-night">
+      <SEO
+        title="Contact SmartBiz"
+        description="Get in touch with SmartBiz for professional web design and SEO services in Kenya."
       />
-      
-      <div className="bg-gray-50 dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 py-16 md:py-24 transition-colors duration-200">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight mb-6 transition-colors">
+
+      <div className="border-b border-line dark:border-night-line">
+        <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 lg:px-8 md:py-24">
+          <h1 className="font-serif text-4xl font-semibold tracking-tight text-ink dark:text-paper-ink md:text-5xl">
             Work With SmartBiz
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors">
-            Ready to build a website that drives actual business growth? Connect with our team today.
+          <p className="mx-auto mt-5 max-w-2xl text-xl leading-relaxed text-muted dark:text-muted-dark">
+            Ready to build a website that drives actual business growth? Connect with our
+            team today.
           </p>
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm overflow-hidden transition-colors duration-200">
-          <div className="p-8 md:p-12 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 transition-colors">Start Your Project</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 transition-colors">
-              The best way to start is by visiting our main business website, where you can view our services, portfolio, and request a personalized quote.
+      <div className="mx-auto mt-16 max-w-3xl px-4 sm:px-6 lg:px-8">
+        <div className="border border-line bg-paper-dim p-8 dark:border-night-line dark:bg-night-dim md:p-12">
+          <div className="text-center">
+            <h2 className="mb-5 font-serif text-2xl font-semibold text-ink dark:text-paper-ink">
+              Start Your Project
+            </h2>
+            <p className="mx-auto mb-9 max-w-xl leading-relaxed text-muted dark:text-muted-dark">
+              The best way to start is by visiting our main business website, where you can
+              view our services, portfolio, and request a personalized quote.
             </p>
-            
+
             <a
               href="https://smartbiz365.site/"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all mb-12 group"
+              className="group mb-12 inline-flex w-full items-center justify-center rounded-md bg-accent px-8 py-4 text-lg font-semibold text-paper transition-colors hover:bg-accent-dark sm:w-auto"
             >
-              Go to SmartBiz Website 
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Go to SmartBiz Website
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10 border-t border-gray-100 dark:border-gray-800 transition-colors">
+            <div className="grid grid-cols-1 gap-8 border-t border-line pt-10 dark:border-night-line sm:grid-cols-3">
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mb-4 transition-colors">
-                  <Globe className="w-6 h-6" />
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white transition-colors">Website</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 transition-colors">smartbiz365.site</p>
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
+                  <Globe className="h-5 w-5" />
+                </span>
+                <h3 className="font-semibold text-ink dark:text-paper-ink">Website</h3>
+                <p className="mt-1 text-sm text-muted dark:text-muted-dark">smartbiz365.site</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mb-4 transition-colors">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white transition-colors">Email</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 transition-colors">Via Website Form</p>
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <h3 className="font-semibold text-ink dark:text-paper-ink">Email</h3>
+                <p className="mt-1 text-sm text-muted dark:text-muted-dark">Via website form</p>
               </div>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mb-4 transition-colors">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white transition-colors">Location</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 transition-colors">Eldoret, Kenya</p>
+                <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">
+                  <MapPin className="h-5 w-5" />
+                </span>
+                <h3 className="font-semibold text-ink dark:text-paper-ink">Location</h3>
+                <p className="mt-1 text-sm text-muted dark:text-muted-dark">Eldoret, Kenya</p>
               </div>
             </div>
           </div>

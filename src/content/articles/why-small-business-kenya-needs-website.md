@@ -2,7 +2,7 @@
 title: "Why Does a Small Business in Kenya Need a Website?"
 description: "In today's digital age, relying solely on foot traffic or word-of-mouth is no longer enough for Kenyan businesses. From ..."
 slug: "why-small-business-kenya-needs-website"
-category: "Business Growth"
+category: "Business"
 tags: ["Small Business","Digital Transformation","Kenya"]
 author: "SmartBiz Team"
 publishedAt: "2023-10-01"

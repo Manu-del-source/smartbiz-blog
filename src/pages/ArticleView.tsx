@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Image from '../components/Image';
+import ArticleThumb from '../components/ArticleThumb';
 import { getArticleBySlug, getArticlesByCategory } from '../utils/articles';
 import SEO from '../components/SEO';
-import { Calendar, Clock, ChevronRight, Share2, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, ChevronRight } from 'lucide-react';
 import ArticleCard from '../components/ArticleCard';
+import { extractHeadings, slugify, nodeToText } from '../utils/headings';
+
+const SITE_URL = 'https://blog.smartbiz365.site';
 
 export default function ArticleView() {
   const { slug } = useParams<{ slug: string }>();
@@ -22,13 +26,16 @@ export default function ArticleView() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // Initial calculation in case the page is loaded already scrolled
     handleScroll();
-    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const article = slug ? getArticleBySlug(slug) : undefined;
+
+  const headings = useMemo(
+    () => (article ? extractHeadings(article.content) : []),
+    [article],
+  );
 
   if (!article) {
     return <Navigate to="/404" replace />;
@@ -37,164 +44,242 @@ export default function ArticleView() {
   const formattedDate = new Date(article.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
-    day: 'numeric'
+    day: 'numeric',
   });
+  const isoDate = new Date(article.publishedAt).toISOString();
+  const articleUrl = `${SITE_URL}/${article.slug}`;
+  const imageUrl = article.featuredImage.startsWith('http')
+    ? article.featuredImage
+    : `${SITE_URL}/og-image.svg`;
 
   const relatedArticles = getArticlesByCategory(article.category)
-    .filter(a => a.slug !== article.slug)
+    .filter((a) => a.slug !== article.slug)
     .slice(0, 3);
 
   const jsonLd = [
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": article.title,
-      "image": [`https://blog.smartbiz365.site${article.featuredImage}`],
-      "datePublished": new Date(article.publishedAt).toISOString(),
-      "author": [{
-          "@type": "Organization",
-          "name": article.author,
-          "url": "https://smartbiz365.site/"
-      }]
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: article.title,
+      description: article.description,
+      image: [imageUrl],
+      datePublished: isoDate,
+      dateModified: isoDate,
+      mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+      author: {
+        '@type': 'Organization',
+        name: article.author,
+        url: 'https://smartbiz365.site/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'SmartBiz',
+        url: 'https://smartbiz365.site/',
+        logo: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}/favicon.svg`,
+        },
+      },
     },
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://blog.smartbiz365.site/"
+          '@type': 'ListItem',
+          position: 2,
+          name: article.category,
+          item: `${SITE_URL}/category/${encodeURIComponent(article.category)}`,
         },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": article.category,
-          "item": `https://blog.smartbiz365.site/category/${encodeURIComponent(article.category)}`
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": article.title,
-          "item": `https://blog.smartbiz365.site/${article.slug}`
-        }
-      ]
-    }
+        { '@type': 'ListItem', position: 3, name: article.title, item: articleUrl },
+      ],
+    },
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-950 pb-20 transition-colors duration-200">
-      <div className="fixed top-0 left-0 w-full h-1 z-[60] bg-transparent pointer-events-none">
-        <div 
-          className="h-full bg-blue-600 transition-all duration-150 ease-out"
+    <div className="bg-paper pb-20 transition-colors dark:bg-night">
+      <div className="pointer-events-none fixed left-0 top-0 z-[60] h-0.5 w-full bg-transparent">
+        <div
+          className="h-full bg-accent transition-[width] duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
-      
-      <SEO 
+
+      <SEO
         title={article.title}
         description={article.description}
         type="article"
-        url={`https://blog.smartbiz365.site/${article.slug}`}
-        image={`https://blog.smartbiz365.site${article.featuredImage}`}
-        publishedAt={new Date(article.publishedAt).toISOString()}
+        url={articleUrl}
+        image={imageUrl}
+        publishedAt={isoDate}
         author={article.author}
       />
       <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* Article Header */}
-      <header className="pt-16 pb-12 bg-gray-50 dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 transition-colors duration-200">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center text-sm font-medium text-gray-500 dark:text-gray-400 mb-8" aria-label="Breadcrumb">
-            <Link to="/" className="hover:text-blue-600 dark:hover:text-blue-400">Home</Link>
-            <ChevronRight className="w-4 h-4 mx-2" />
-            <Link to={`/category/${article.category}`} className="hover:text-blue-600 dark:hover:text-blue-400">{article.category}</Link>
+      {/* Header */}
+      <header className="border-b border-line pb-10 pt-12 dark:border-night-line">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <nav className="mb-6 flex items-center text-sm text-muted dark:text-muted-dark" aria-label="Breadcrumb">
+            <Link to="/" className="hover:text-accent">Home</Link>
+            <ChevronRight className="mx-2 h-3.5 w-3.5" />
+            <Link to={`/category/${encodeURIComponent(article.category)}`} className="hover:text-accent">
+              {article.category}
+            </Link>
           </nav>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight mb-6 transition-colors">
+          <h1 className="font-serif text-3xl font-semibold leading-tight tracking-tight text-ink dark:text-paper-ink md:text-4xl">
             {article.title}
           </h1>
-          
-          <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-300 mb-8">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-700 dark:text-blue-400 font-bold transition-colors">
-                SB
-              </div>
-              <div>
-                <p className="font-semibold text-gray-900 dark:text-white">{article.author}</p>
-                <p className="text-xs">SmartBiz Web Design</p>
-              </div>
+
+          <p className="mt-4 text-lg leading-relaxed text-muted dark:text-muted-dark">
+            {article.description}
+          </p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted dark:text-muted-dark">
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-8 w-8 items-center justify-center rounded-md bg-accent/10 font-serif text-sm font-semibold text-accent">
+                S
+              </span>
+              <span className="font-medium text-ink dark:text-paper-ink">{article.author}</span>
             </div>
-            <div className="flex items-center gap-4 border-l border-gray-200 dark:border-gray-800 pl-6 transition-colors">
-              <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" /> {formattedDate}</span>
-              <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> {article.readingTime}</span>
-            </div>
+            <span className="flex items-center gap-1.5">
+              <Calendar className="h-4 w-4" /> {formattedDate}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Clock className="h-4 w-4" /> {article.readingTime}
+            </span>
           </div>
         </div>
       </header>
 
-      {/* Featured Image */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
-        <Image 
-          src={article.featuredImage} 
-          alt={article.title}
-          wrapperClassName="aspect-[21/9] w-full rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 transition-colors"
-          sizes="(max-width: 1024px) 100vw, 1024px"
-        />
+      {/* Body + rail */}
+      <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-12">
+          <div className="mx-auto w-full max-w-3xl lg:mx-0">
+            <ArticleThumb
+              src={article.featuredImage}
+              alt={article.title}
+              category={article.category}
+              wrapperClassName="mb-10 aspect-[16/8] w-full border border-line dark:border-night-line"
+            />
+
+            <article className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-serif prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-blockquote:border-accent prose-blockquote:font-serif prose-blockquote:not-italic prose-strong:text-ink dark:prose-strong:text-paper-ink prose-p:leading-relaxed prose-li:leading-relaxed prose-img:border prose-img:border-line dark:prose-img:border-night-line">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h2: ({ children }) => {
+                    const id = slugify(nodeToText(children));
+                    return (
+                      <h2 id={id} className="scroll-mt-24">
+                        {children}
+                      </h2>
+                    );
+                  },
+                  h3: ({ children }) => {
+                    const id = slugify(nodeToText(children));
+                    return (
+                      <h3 id={id} className="scroll-mt-24">
+                        {children}
+                      </h3>
+                    );
+                  },
+                  img: (props) => (
+                    <Image
+                      src={props.src || ''}
+                      alt={props.alt || ''}
+                      wrapperClassName="my-8"
+                      sizes="(max-width: 768px) 100vw, 768px"
+                    />
+                  ),
+                }}
+              >
+                {article.content}
+              </ReactMarkdown>
+            </article>
+
+            {article.tags?.length > 0 && (
+              <div className="mt-12 flex flex-wrap gap-2 border-t border-line pt-8 dark:border-night-line">
+                {article.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-line px-3 py-1 text-sm text-muted dark:border-night-line dark:text-muted-dark"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <div className="mt-14 border border-line bg-paper-dim p-8 text-center dark:border-night-line dark:bg-night-dim">
+              <h3 className="mb-3 font-serif text-2xl font-semibold text-ink dark:text-paper-ink">
+                Need a professional website for your business?
+              </h3>
+              <p className="mb-6 text-muted dark:text-muted-dark">
+                SmartBiz builds fast, SEO-friendly websites for businesses in Eldoret and
+                across Kenya.
+              </p>
+              <a
+                href="https://smartbiz365.site/"
+                className="inline-flex items-center rounded-md bg-accent px-6 py-3 text-base font-semibold text-paper transition-colors hover:bg-accent-dark"
+              >
+                Work with SmartBiz
+              </a>
+            </div>
+          </div>
+
+          {/* Right rail */}
+          <aside className="mt-12 hidden lg:mt-0 lg:block">
+            <div className="sticky top-24 space-y-8">
+              {headings.length > 1 && (
+                <div>
+                  <h3 className="mb-3 text-sm font-semibold text-ink dark:text-paper-ink">
+                    Contents
+                  </h3>
+                  <ul className="space-y-2.5 border-l border-line dark:border-night-line">
+                    {headings.map((h) => (
+                      <li key={h.id} className={h.depth === 3 ? 'pl-7' : 'pl-4'}>
+                        <a
+                          href={`#${h.id}`}
+                          className="block border-l-2 border-transparent pl-0 text-sm text-muted transition-colors hover:text-accent dark:text-muted-dark"
+                        >
+                          {h.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="border border-line p-5 dark:border-night-line">
+                <h4 className="mb-2 font-serif text-base font-semibold text-ink dark:text-paper-ink">
+                  Need a website?
+                </h4>
+                <p className="mb-4 text-sm leading-relaxed text-muted dark:text-muted-dark">
+                  SmartBiz designs and builds websites for businesses across Kenya.
+                </p>
+                <a
+                  href="https://smartbiz365.site/"
+                  className="block rounded-md bg-ink px-4 py-2.5 text-center text-sm font-semibold text-paper transition-colors hover:bg-accent dark:bg-paper-ink dark:text-night"
+                >
+                  Get a Website
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
 
-      {/* Article Body */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 md:mt-16">
-        <article className="prose prose-base sm:prose-lg dark:prose-invert prose-blue max-w-none prose-headings:tracking-tight prose-a:text-blue-600 dark:prose-a:text-blue-400 hover:prose-a:text-blue-700 dark:hover:prose-a:text-blue-300 prose-p:leading-relaxed prose-li:leading-relaxed">
-          <ReactMarkdown 
-            remarkPlugins={[remarkGfm]}
-            components={{
-              img: (props) => (
-                <Image 
-                  src={props.src || ''} 
-                  alt={props.alt || ''} 
-                  wrapperClassName="my-8 rounded-xl"
-                  sizes="(max-width: 768px) 100vw, 768px"
-                />
-              )
-            }}
-          >
-            {article.content}
-          </ReactMarkdown>
-        </article>
-
-        <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-wrap gap-2 transition-colors">
-          {article.tags?.map(tag => (
-            <span key={tag} className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full font-medium transition-colors">
-              #{tag}
-            </span>
-          ))}
-        </div>
-        
-        {/* Inline CTA */}
-        <div className="mt-16 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900/50 rounded-2xl p-8 text-center transition-colors">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Need a professional website for your business?</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6">SmartBiz builds high-converting, SEO-optimized websites for businesses in Eldoret and across Kenya.</p>
-          <a
-            href="https://smartbiz365.site/"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors"
-          >
-            Work with SmartBiz
-          </a>
-        </div>
-      </div>
-
-      {/* Related Articles */}
+      {/* Related */}
       {relatedArticles.length > 0 && (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 border-b border-gray-100 dark:border-gray-800 pb-4 transition-colors">Related Articles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedArticles.map(related => (
+        <div className="mx-auto mt-20 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h3 className="mb-8 border-b border-line pb-4 font-serif text-2xl font-semibold text-ink dark:border-night-line dark:text-paper-ink">
+            Related Articles
+          </h3>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {relatedArticles.map((related) => (
               <ArticleCard key={related.slug} article={related} />
             ))}
           </div>
