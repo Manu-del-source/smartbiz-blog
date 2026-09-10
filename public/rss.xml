@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>SmartBiz Blog</title>
+  <description>Professional web design and SEO blog for Kenyan businesses.</description>
+  <link>https://blog.smartbiz365.site</link>
+  <atom:link href="https://blog.smartbiz365.site/rss.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title><![CDATA[How SEO Helps Small Businesses Get Found Online]]></title>
+    <description><![CDATA[Search Engine Optimization (SEO) sounds technical, but its premise is simple: making your website visible when people se...]]></description>
+    <link>https://blog.smartbiz365.site/seo-helps-small-businesses</link>
+    <guid>https://blog.smartbiz365.site/seo-helps-small-businesses</guid>
+    <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Mobile-Friendly Websites: Why They Matter for Kenyan Businesses]]></title>
+    <description><![CDATA[In Kenya, the internet is primarily accessed via mobile phones. If your website is only designed for a desktop computer ...]]></description>
+    <link>https://blog.smartbiz365.site/mobile-friendly-websites-kenya</link>
+    <guid>https://blog.smartbiz365.site/mobile-friendly-websites-kenya</guid>
+    <pubDate>Fri, 10 Nov 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Website Design in Eldoret: What Local Businesses Should Look For]]></title>
+    <description><![CDATA[As Eldoret continues to grow as a major business hub, the competition among local businesses is intensifying. Having a s...]]></description>
+    <link>https://blog.smartbiz365.site/website-design-eldoret-guide</link>
+    <guid>https://blog.smartbiz365.site/website-design-eldoret-guide</guid>
+    <pubDate>Sun, 05 Nov 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[How Restaurants Can Use a Website to Attract More Customers]]></title>
+    <description><![CDATA[When people are hungry, they search online. If your restaurant doesn't have a strong digital presence, you are losing cu...]]></description>
+    <link>https://blog.smartbiz365.site/restaurant-website-attract-customers</link>
+    <guid>https://blog.smartbiz365.site/restaurant-website-attract-customers</guid>
+    <pubDate>Mon, 30 Oct 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[How a Hotel Website Can Help Increase Direct Bookings]]></title>
+    <description><![CDATA[Many hotels rely heavily on Online Travel Agencies (OTAs) like Booking.com or Expedia. While these platforms provide vis...]]></description>
+    <link>https://blog.smartbiz365.site/hotel-website-increase-direct-bookings</link>
+    <guid>https://blog.smartbiz365.site/hotel-website-increase-direct-bookings</guid>
+    <pubDate>Wed, 25 Oct 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[What Should a Good Business Website Include?]]></title>
+    <description><![CDATA[Building a website is more than just putting some text and images online. A successful business website needs specific e...]]></description>
+    <link>https://blog.smartbiz365.site/what-good-business-website-includes</link>
+    <guid>https://blog.smartbiz365.site/what-good-business-website-includes</guid>
+    <pubDate>Fri, 20 Oct 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[How to Get Your Business Found on Google in Kenya]]></title>
+    <description><![CDATA[Having a beautiful website is useless if no one can find it. Search Engine Optimization (SEO) is the process of improvin...]]></description>
+    <link>https://blog.smartbiz365.site/how-to-get-found-on-google-kenya</link>
+    <guid>https://blog.smartbiz365.site/how-to-get-found-on-google-kenya</guid>
+    <pubDate>Sun, 15 Oct 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Website vs Facebook Page: Which Does Your Business Need?]]></title>
+    <description><![CDATA[Many Kenyan businesses start their online journey with a Facebook or Instagram page. It's free, easy to set up, and reac...]]></description>
+    <link>https://blog.smartbiz365.site/website-vs-facebook-page</link>
+    <guid>https://blog.smartbiz365.site/website-vs-facebook-page</guid>
+    <pubDate>Tue, 10 Oct 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[How Much Does a Website Cost in Kenya?]]></title>
+    <description><![CDATA[One of the most common questions we get is, 'How much does a website cost?' The truth is, the cost of website design in ...]]></description>
+    <link>https://blog.smartbiz365.site/how-much-does-website-cost-kenya</link>
+    <guid>https://blog.smartbiz365.site/how-much-does-website-cost-kenya</guid>
+    <pubDate>Thu, 05 Oct 2023 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Why Does a Small Business in Kenya Need a Website?]]></title>
+    <description><![CDATA[In today's digital age, relying solely on foot traffic or word-of-mouth is no longer enough for Kenyan businesses. From ...]]></description>
+    <link>https://blog.smartbiz365.site/why-small-business-kenya-needs-website</link>
+    <guid>https://blog.smartbiz365.site/why-small-business-kenya-needs-website</guid>
+    <pubDate>Sun, 01 Oct 2023 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>

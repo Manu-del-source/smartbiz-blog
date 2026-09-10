@@ -1,0 +1,6 @@
+{
+  "name": "SmartBiz Blog",
+  "description": "Professional web design and SEO blog for Kenyan businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
