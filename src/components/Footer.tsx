@@ -65,6 +65,14 @@ export default function Footer() {
           <p className="text-sm text-muted dark:text-muted-dark">
             &copy; {new Date().getFullYear()} SmartBiz. All rights reserved.
           </p>
+          <div className="flex items-center gap-6 text-sm text-muted dark:text-muted-dark">
+            <Link to="/privacy" className="transition-colors hover:text-accent">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="transition-colors hover:text-accent">
+              Terms of Use
+            </Link>
+          </div>
           <p className="text-sm text-muted dark:text-muted-dark">
             Built in Eldoret, for businesses across Kenya.
           </p>

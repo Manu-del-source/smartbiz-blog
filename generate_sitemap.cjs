@@ -19,6 +19,14 @@ let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <loc>${baseUrl}/contact</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>${baseUrl}/privacy</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/terms</loc>
+    <priority>0.3</priority>
+  </url>
 `;
 
 files.forEach(file => {

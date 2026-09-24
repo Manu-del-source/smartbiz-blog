@@ -5,7 +5,7 @@ slug: "how-much-does-website-cost-kenya"
 category: "Web Design"
 tags: ["Pricing","Web Development","Budget"]
 author: "SmartBiz Team"
-publishedAt: "2023-10-05"
+publishedAt: "2026-09-11"
 readingTime: "6 min read"
 featuredImage: "/placeholder.jpg"
 ---

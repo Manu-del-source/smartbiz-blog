@@ -1,0 +1,28 @@
+{
+  "staticPaths": [
+    "/",
+    "/about",
+    "/contact",
+    "/privacy",
+    "/terms",
+    "/search"
+  ],
+  "categories": [
+    "Web Design",
+    "SEO",
+    "Business",
+    "Guides"
+  ],
+  "slugs": [
+    "hotel-website-increase-direct-bookings",
+    "how-much-does-website-cost-kenya",
+    "how-to-get-found-on-google-kenya",
+    "mobile-friendly-websites-kenya",
+    "restaurant-website-attract-customers",
+    "seo-helps-small-businesses",
+    "website-design-eldoret-guide",
+    "website-vs-facebook-page",
+    "what-good-business-website-includes",
+    "why-small-business-kenya-needs-website"
+  ]
+}

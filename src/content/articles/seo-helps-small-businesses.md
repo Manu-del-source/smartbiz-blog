@@ -5,7 +5,7 @@ slug: "seo-helps-small-businesses"
 category: "SEO"
 tags: ["SEO","Small Business","Digital Marketing"]
 author: "SmartBiz Team"
-publishedAt: "2023-11-15"
+publishedAt: "2026-09-22"
 readingTime: "6 min read"
 featuredImage: "/placeholder.jpg"
 ---

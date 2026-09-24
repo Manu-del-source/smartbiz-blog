@@ -5,7 +5,7 @@ slug: "why-small-business-kenya-needs-website"
 category: "Business"
 tags: ["Small Business","Digital Transformation","Kenya"]
 author: "SmartBiz Team"
-publishedAt: "2023-10-01"
+publishedAt: "2026-09-10"
 readingTime: "5 min read"
 featuredImage: "/placeholder.jpg"
 ---

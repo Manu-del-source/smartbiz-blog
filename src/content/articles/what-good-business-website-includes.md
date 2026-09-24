@@ -5,7 +5,7 @@ slug: "what-good-business-website-includes"
 category: "Web Design"
 tags: ["UX","Best Practices","Web Development"]
 author: "SmartBiz Team"
-publishedAt: "2023-10-20"
+publishedAt: "2026-09-15"
 readingTime: "5 min read"
 featuredImage: "/placeholder.jpg"
 ---

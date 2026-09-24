@@ -34,6 +34,20 @@ export default function About() {
           takes to rank on Google.
         </p>
 
+        <h2>Who Writes This</h2>
+        <p>
+          The SmartBiz Blog is written and edited by <strong>Emmanuel Kiptoo</strong>, founder of
+          SmartBiz and a full-stack developer based in Eldoret. Articles draw on direct experience
+          building websites, e-commerce stores, and business systems for Kenyan clients.
+        </p>
+        <p>
+          <strong>Editorial policy:</strong> we write about what we've actually built and seen
+          work. When we cite a figure or claim, we aim to say where it comes from. If you spot
+          something outdated, inaccurate, or unclear, email us at{' '}
+          <a href="mailto:hello@smartbiz365.site">hello@smartbiz365.site</a> and we'll review and
+          correct it — significant corrections will be noted on the article itself.
+        </p>
+
         <h2>Why This Blog Exists</h2>
         <p>
           Navigating the digital landscape can be confusing, and a lot of businesses spend

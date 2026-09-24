@@ -8,7 +8,7 @@ const articles = [
     category: "Business Growth",
     tags: ["Small Business", "Digital Transformation", "Kenya"],
     author: "SmartBiz Team",
-    publishedAt: "2023-10-01",
+    publishedAt: "2026-09-10",
     readingTime: "5 min read",
     content: `In today's digital age, relying solely on foot traffic or word-of-mouth is no longer enough for Kenyan businesses. From local shops in Eldoret to service providers in Nairobi, consumers are increasingly turning to Google to find products and services.
 
@@ -32,7 +32,7 @@ Ready to take your business online? [See what SmartBiz can build for your busine
     category: "Web Design",
     tags: ["Pricing", "Web Development", "Budget"],
     author: "SmartBiz Team",
-    publishedAt: "2023-10-05",
+    publishedAt: "2026-09-11",
     readingTime: "6 min read",
     content: `One of the most common questions we get is, "How much does a website cost?" The truth is, the cost of website design in Kenya varies widely based on your specific needs, the complexity of the site, and the expertise of the developer.
 
@@ -59,7 +59,7 @@ At SmartBiz, we provide transparent pricing and solutions tailored to your budge
     category: "Digital Marketing",
     tags: ["Social Media", "Web Design", "Marketing"],
     author: "SmartBiz Team",
-    publishedAt: "2023-10-10",
+    publishedAt: "2026-09-12",
     readingTime: "4 min read",
     content: `Many Kenyan businesses start their online journey with a Facebook or Instagram page. It's free, easy to set up, and reaches many people. But is it enough?
 
@@ -86,7 +86,7 @@ You shouldn't choose one over the other; they serve different purposes. Use soci
     category: "SEO",
     tags: ["SEO", "Google", "Local Search"],
     author: "SmartBiz Team",
-    publishedAt: "2023-10-15",
+    publishedAt: "2026-09-14",
     readingTime: "7 min read",
     content: `Having a beautiful website is useless if no one can find it. Search Engine Optimization (SEO) is the process of improving your website so it ranks higher on Google when people search for your services.
 
@@ -114,7 +114,7 @@ SEO is a long-term strategy, but it offers the best return on investment. [Need 
     category: "Web Design",
     tags: ["UX", "Best Practices", "Web Development"],
     author: "SmartBiz Team",
-    publishedAt: "2023-10-20",
+    publishedAt: "2026-09-15",
     readingTime: "5 min read",
     content: `Building a website is more than just putting some text and images online. A successful business website needs specific elements to effectively convert visitors into customers.
 
@@ -146,7 +146,7 @@ Include customer testimonials, reviews, partner logos, or security badges to bui
     category: "Case Studies",
     tags: ["Hospitality", "Web Design", "Bookings"],
     author: "SmartBiz Team",
-    publishedAt: "2023-10-25",
+    publishedAt: "2026-09-16",
     readingTime: "6 min read",
     content: `Many hotels rely heavily on Online Travel Agencies (OTAs) like Booking.com or Expedia. While these platforms provide visibility, they take a significant commission on every booking. A strong independent hotel website can help you reclaim those margins.
 
@@ -171,7 +171,7 @@ By offering a slightly better rate or a small perk (like free breakfast) for dir
     category: "Case Studies",
     tags: ["Restaurants", "Web Design", "Marketing"],
     author: "SmartBiz Team",
-    publishedAt: "2023-10-30",
+    publishedAt: "2026-09-18",
     readingTime: "4 min read",
     content: `When people are hungry, they search online. If your restaurant doesn't have a strong digital presence, you are losing customers to competitors who do.
 
@@ -195,7 +195,7 @@ A great website acts as your best digital server, welcoming guests before they e
     category: "Web Design",
     tags: ["Local Business", "Eldoret", "Web Development"],
     author: "SmartBiz Team",
-    publishedAt: "2023-11-05",
+    publishedAt: "2026-09-19",
     readingTime: "5 min read",
     content: `As Eldoret continues to grow as a major business hub, the competition among local businesses is intensifying. Having a solid online presence is no longer optional; it's a necessity.
 
@@ -220,7 +220,7 @@ At SmartBiz, we understand the local business landscape and build websites desig
     category: "Technology",
     tags: ["Mobile", "Responsive Design", "UX"],
     author: "SmartBiz Team",
-    publishedAt: "2023-11-10",
+    publishedAt: "2026-09-20",
     readingTime: "5 min read",
     content: `In Kenya, the internet is primarily accessed via mobile phones. If your website is only designed for a desktop computer screen, you are alienating the vast majority of your potential customers.
 
@@ -242,7 +242,7 @@ Don't let a poor mobile experience cost you customers. [Let SmartBiz upgrade you
     category: "SEO",
     tags: ["SEO", "Small Business", "Digital Marketing"],
     author: "SmartBiz Team",
-    publishedAt: "2023-11-15",
+    publishedAt: "2026-09-22",
     readingTime: "6 min read",
     content: `Search Engine Optimization (SEO) sounds technical, but its premise is simple: making your website visible when people search for what you offer. For small businesses, SEO is the great equalizer.
 

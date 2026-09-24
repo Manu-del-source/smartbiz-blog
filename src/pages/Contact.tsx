@@ -54,7 +54,12 @@ export default function Contact() {
                   <Mail className="h-5 w-5" />
                 </span>
                 <h3 className="font-semibold text-ink dark:text-paper-ink">Email</h3>
-                <p className="mt-1 text-sm text-muted dark:text-muted-dark">Via website form</p>
+                <a
+                  href="mailto:hello@smartbiz365.site"
+                  className="mt-1 text-sm text-muted transition-colors hover:text-accent dark:text-muted-dark"
+                >
+                  hello@smartbiz365.site
+                </a>
               </div>
               <div className="flex flex-col items-center">
                 <span className="mb-3 flex h-11 w-11 items-center justify-center rounded-md bg-accent/10 text-accent">

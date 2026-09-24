@@ -5,7 +5,7 @@ slug: "mobile-friendly-websites-kenya"
 category: "Web Design"
 tags: ["Mobile","Responsive Design","UX"]
 author: "SmartBiz Team"
-publishedAt: "2023-11-10"
+publishedAt: "2026-09-20"
 readingTime: "5 min read"
 featuredImage: "/placeholder.jpg"
 ---

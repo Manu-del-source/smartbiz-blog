@@ -5,7 +5,7 @@ slug: "restaurant-website-attract-customers"
 category: "Guides"
 tags: ["Restaurants","Web Design","Marketing"]
 author: "SmartBiz Team"
-publishedAt: "2023-10-30"
+publishedAt: "2026-09-18"
 readingTime: "4 min read"
 featuredImage: "/placeholder.jpg"
 ---

@@ -5,7 +5,7 @@ slug: "website-design-eldoret-guide"
 category: "Web Design"
 tags: ["Local Business","Eldoret","Web Development"]
 author: "SmartBiz Team"
-publishedAt: "2023-11-05"
+publishedAt: "2026-09-19"
 readingTime: "5 min read"
 featuredImage: "/placeholder.jpg"
 ---

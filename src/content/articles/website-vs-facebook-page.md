@@ -5,7 +5,7 @@ slug: "website-vs-facebook-page"
 category: "Business"
 tags: ["Social Media","Web Design","Marketing"]
 author: "SmartBiz Team"
-publishedAt: "2023-10-10"
+publishedAt: "2026-09-12"
 readingTime: "4 min read"
 featuredImage: "/placeholder.jpg"
 ---

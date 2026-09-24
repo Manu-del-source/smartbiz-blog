@@ -5,7 +5,7 @@ slug: "hotel-website-increase-direct-bookings"
 category: "Guides"
 tags: ["Hospitality","Web Design","Bookings"]
 author: "SmartBiz Team"
-publishedAt: "2023-10-25"
+publishedAt: "2026-09-16"
 readingTime: "6 min read"
 featuredImage: "/placeholder.jpg"
 ---

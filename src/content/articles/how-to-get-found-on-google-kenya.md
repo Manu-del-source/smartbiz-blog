@@ -5,7 +5,7 @@ slug: "how-to-get-found-on-google-kenya"
 category: "SEO"
 tags: ["SEO","Google","Local Search"]
 author: "SmartBiz Team"
-publishedAt: "2023-10-15"
+publishedAt: "2026-09-14"
 readingTime: "7 min read"
 featuredImage: "/placeholder.jpg"
 ---
