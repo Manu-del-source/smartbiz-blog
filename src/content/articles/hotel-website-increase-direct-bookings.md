@@ -3,38 +3,57 @@ title: "How a Hotel Website Can Increase Direct Bookings"
 description: "Why direct bookings matter more than OTA commissions suggest, and the concrete features a hotel or lodge website needs to win them."
 slug: "hotel-website-increase-direct-bookings"
 category: "Guides"
-tags: ["Hospitality","Hotels","Direct Bookings","Web Design"]
-author: "SmartBiz Team"
+tags: ["Hospitality", "Hotels", "Direct Bookings", "Web Design"]
+author: "Emmanuel Kiptoo"
 publishedAt: "2026-09-16"
-readingTime: "3 min read"
+updatedAt: "2026-09-24"
+readingTime: "7 min read"
 featuredImage: "/placeholder.jpg"
+sources:
+  - title: "Google Business Profile — get listed on Google"
+    url: "https://business.google.com/"
+  - title: "Google Business Profile Help"
+    url: "https://support.google.com/business/"
+  - title: "M-Pesa Daraja developer portal — Safaricom"
+    url: "https://developer.safaricom.co.ke/"
 ---
 
-Online travel agencies like Booking.com and Expedia bring hotels and lodges real, valuable bookings — that's not in question. What's less discussed is how much of the room rate never reaches the property. Commission rates on these platforms typically fall between 15% and 25% of the booking value, depending on the platform, property type, and any preferred-partner programs a hotel opts into. On a KES 8,000-a-night room, that's roughly KES 1,200 to 2,000 gone before any other cost is covered. A hotel that relies entirely on OTAs isn't just paying for marketing — it's giving up a meaningful share of every booking, indefinitely, for guests it could otherwise have won directly.
+Online travel agencies like Booking.com and Expedia bring hotels and lodges real, valuable bookings — that's not in question. What's less discussed is how much of each room rate never reaches the property. Commissions on these platforms are commonly reported in the 15–25% range depending on the platform, property type, and any preferred-partner programs — check your own agreements for your exact figure, because it varies. But the shape of the problem doesn't: a hotel that relies entirely on OTAs gives up a meaningful share of *every* booking, indefinitely, including from guests who would happily have booked direct.
 
-## Why "Just List on Booking.com" Isn't a Full Strategy
+## The maths, illustrated
 
-None of this means abandoning OTAs — they're often how new guests discover a property in the first place, and pulling out entirely can mean disappearing from a huge amount of search traffic. The more realistic goal is to use OTAs for discovery while building a direct channel that captures repeat guests, referrals, and anyone who searches for your property by name — visitors who have no reason to route their money through a third party's 15–25% cut.
+Take a KES 8,000-a-night room. At a 20% commission — a mid-range illustrative figure; yours may differ — that's KES 1,600 gone before any other cost is covered. A small property doing 100 OTA room-nights a month at that rate pays roughly KES 160,000 a month in commission. Shift just a quarter of those to direct bookings and the property keeps an extra ~KES 40,000 monthly — every month, for work done once.
 
-## What a Direct-Booking Website Actually Needs
+Run the same arithmetic with your own average rate, occupancy, and actual commission percentage. The result is usually the business case for the entire website in a single number.
 
-A hotel's own website earns direct bookings by removing every reason a guest would default back to an OTA out of convenience:
+## Why "just list on Booking.com" isn't a full strategy
 
-- **A visible way to book or inquire without leaving the page** — a simple availability inquiry form (via WhatsApp or email) works well for smaller properties that don't need a full booking engine; larger ones may justify a real booking widget.
-- **M-Pesa as a payment option.** For Kenyan guests especially, being able to pay a deposit via M-Pesa without entering card details is a real friction-remover — and for international guests, accepting card payments still matters.
-- **Real photography, not stock images.** Guests comparing your site to your OTA listing will notice immediately if your own site looks less trustworthy than the third-party one.
-- **Clear, current pricing and policies** — cancellation terms, what's included, and seasonal rate differences, so guests don't need to leave your site to find out.
-- **Local SEO for your specific area** — a page that clearly targets "hotel near [your specific location/attraction]" rather than only your brand name, since that's how a large share of first-time searches happen.
-- **Genuine reviews, aggregated or linked** — guests will look for social proof regardless of which channel they book through.
+None of this means abandoning OTAs. They're often how new guests discover a property in the first place, and pulling out entirely can mean disappearing from a huge amount of search traffic. The realistic goal is a division of labor:
 
-## Keep an Eye on Rate Parity
+- **OTAs for discovery** — capture the traveler comparing ten properties in your area who has never heard of you.
+- **Your own site for conversion** — capture repeat guests, referrals, and anyone who searches for your property *by name*. A guest typing your hotel's name into Google has already chosen you; routing their money through a third party's commission is pure loss.
 
-Many OTA contracts include rate-parity clauses that restrict how much cheaper you can price a room on your own site compared to the OTA listing. Read your existing OTA agreements before running a "book direct and save" promotion — the incentive to book direct usually needs to come from added value (a free breakfast, late checkout, a small welcome extra) rather than a lower headline price, if parity terms apply to your contracts.
+Every repeat guest still booking through an OTA is a process failure, not a marketing problem. Your website's job is to make direct booking the path of least resistance for everyone who already wants to stay with you.
 
-## The Honest Trade-Off
+## What a direct-booking website actually needs
 
-A direct-booking website won't replace OTA traffic overnight, and for a brand-new property with no reputation yet, OTAs may still be where most early bookings come from. The return on a good direct-booking site shows up gradually — in the growing share of returning guests, referrals, and name-searches that stop costing you a commission.
+A hotel's own site earns direct bookings by removing every reason a guest would default back to an OTA out of convenience:
 
-SmartBiz builds hotel and lodge websites with M-Pesa-enabled booking inquiries and local SEO built in from the start.
+- **A visible way to book or inquire without leaving the page.** A simple availability inquiry form (answered fast, via WhatsApp or email) works well for smaller properties that don't need a full booking engine. Larger ones may justify a real booking widget with live availability. Either way, the path from "interested" to "booked" must be shorter than opening another tab.
+- **M-Pesa as a payment option.** For Kenyan guests especially, paying a deposit via M-Pesa without entering card details removes real friction — and for international guests, card payment still matters. See [what M-Pesa integration involves](/mpesa-integration-for-business-websites) for how the technical side works.
+- **Real photography, not stock images.** Guests compare your site against your OTA listing. If your own site looks less trustworthy than the third-party one — generic lobby photos, no actual rooms shown — they book where they feel safer, and you pay commission for the privilege.
+- **Clear, current pricing and policies.** Cancellation terms, what's included, seasonal rate differences. Every unanswered question is a reason to leave your site for the OTA page that answers it.
+- **Local SEO for your specific area.** A page targeting "hotel near [your specific location or attraction]" — not just your brand name — since that's how first-time searches happen. Pair it with a complete [Google Business Profile](/google-business-profile-setup-guide-kenya) so Maps searches show you correctly.
+- **Genuine reviews, displayed or linked.** Guests look for social proof regardless of channel. Surface your Google rating prominently; our [reviews guide](/get-online-reviews-kenya-business) covers building it.
 
-[Talk to SmartBiz about a direct-booking website for your property](https://smartbiz365.site/).
+## Keep an eye on rate parity
+
+Many OTA contracts include rate-parity clauses restricting how much cheaper you can price a room on your own site versus the OTA listing. Read your existing agreements before running a "book direct and save" promotion. Where parity terms apply, the direct-booking incentive usually has to come from **added value** rather than a lower headline price: free breakfast, late checkout, a room upgrade subject to availability, a small welcome extra. These cost you little, can't be matched by the OTA listing, and are often more persuasive than a small discount anyway.
+
+## How to measure progress
+
+Track the direct share monthly: direct bookings divided by total bookings. Note where each direct booking came from (ask at check-in — "how did you hear about us?" takes ten seconds and most guests answer). Watch three trends: direct share rising, repeat-guest direct rate rising, and name-searches in Search Console converting to site visits. A direct-booking site that isn't measured gets neglected; one with a visible monthly number gets improved.
+
+## The honest trade-off
+
+A direct-booking website won't replace OTA traffic overnight. For a brand-new property with no reputation yet, OTAs may still deliver most early bookings, and that's fine — discovery is what they're for. The return shows up gradually, in the growing share of returning guests, referrals, and name-searches that stop costing you a commission. Start with the inquiry path and the photography, add payments and reviews next, and measure the direct share every month. The commission you keep is the marketing budget you never had to spend.

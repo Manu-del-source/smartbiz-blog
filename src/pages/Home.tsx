@@ -9,12 +9,14 @@ export default function Home() {
   const articles = getAllArticles();
   const featuredArticle = articles[0];
   const recentArticles = articles.slice(1, 7);
+  const archiveArticles = articles.slice(7);
 
   return (
     <div className="bg-paper transition-colors dark:bg-night">
       <SEO
         title="Web Design & SEO Blog for Kenyan Businesses"
         description="Practical insights on web design, SEO, and digital strategy for ambitious Kenyan businesses. Brought to you by SmartBiz."
+        url="https://blog.smartbiz365.site/"
       />
 
       {/* Hero */}
@@ -100,6 +102,36 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Archive: every article stays reachable from the homepage */}
+      {archiveArticles.length > 0 && (
+        <section className="border-t border-line py-14 dark:border-night-line md:py-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <h2 className="mb-8 font-serif text-2xl font-semibold text-ink dark:text-paper-ink">
+              From the Archive
+            </h2>
+            <ul className="divide-y divide-line border-y border-line dark:divide-night-line dark:border-night-line">
+              {archiveArticles.map((article) => (
+                <li key={article.slug}>
+                  <Link to={`/${article.slug}`} className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                    <span className="font-serif text-lg font-semibold text-ink transition-colors group-hover:text-accent dark:text-paper-ink">
+                      {article.title}
+                    </span>
+                    <span className="shrink-0 text-sm text-muted dark:text-muted-dark">
+                      {article.category} ·{' '}
+                      {new Date(article.publishedAt).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="bg-ink dark:bg-night-dim">

@@ -14,16 +14,19 @@ export default function Search() {
     const searchTerms = query.toLowerCase().split(' ').filter(Boolean);
 
     return allArticles.filter((article) => {
-      const searchString = `${article.title} ${article.description} ${article.category} ${article.tags.join(' ')}`.toLowerCase();
+      const searchString = `${article.title} ${article.description} ${article.category} ${article.tags.join(' ')} ${article.content}`.toLowerCase();
       return searchTerms.every((term) => searchString.includes(term));
     });
   }, [query, allArticles]);
 
   return (
     <div className="min-h-screen bg-paper transition-colors dark:bg-night">
+      {/* Utility screen: never index (results vary per query, often empty). */}
       <SEO
         title="Search Articles"
         description="Search for articles about web design, SEO, and business growth on the SmartBiz Blog."
+        url="https://blog.smartbiz365.site/search"
+        noindex
       />
 
       <div className="border-b border-line dark:border-night-line">

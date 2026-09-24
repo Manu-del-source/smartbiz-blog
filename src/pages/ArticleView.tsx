@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Image from '../components/Image';
 import ArticleThumb from '../components/ArticleThumb';
-import { getArticleBySlug, getArticlesByCategory } from '../utils/articles';
+import { getArticleBySlug, getRelatedArticles } from '../utils/articles';
+import { getAuthorMeta } from '../content/authors';
 import SEO from '../components/SEO';
-import { Calendar, Clock, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, ChevronRight, ExternalLink } from 'lucide-react';
 import ArticleCard from '../components/ArticleCard';
+import NotFound from './NotFound';
 import { extractHeadings, slugify, nodeToText } from '../utils/headings';
 
 const SITE_URL = 'https://blog.smartbiz365.site';
@@ -38,38 +40,48 @@ export default function ArticleView() {
   );
 
   if (!article) {
-    return <Navigate to="/404" replace />;
+    // Render the 404 UI directly instead of redirecting: there is no /404
+    // route, so redirecting to it would match /:slug again. The hosting
+    // middleware already serves a real 404 status for unknown paths.
+    return <NotFound />;
   }
 
-  const formattedDate = new Date(article.publishedAt).toLocaleDateString('en-US', {
+  const formattedPublished = new Date(article.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   });
-  const isoDate = new Date(article.publishedAt).toISOString();
+  const isoPublished = new Date(article.publishedAt).toISOString();
+  const updatedAt = article.updatedAt ?? article.publishedAt;
+  const wasUpdated = new Date(updatedAt).getTime() !== new Date(article.publishedAt).getTime();
+  const formattedUpdated = new Date(updatedAt).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  const isoUpdated = new Date(updatedAt).toISOString();
   const articleUrl = `${SITE_URL}/${article.slug}`;
   const imageUrl = article.featuredImage.startsWith('http')
     ? article.featuredImage
-    : `${SITE_URL}/og-image.svg`;
+    : `${SITE_URL}/og-image.png`;
+  const authorMeta = getAuthorMeta(article.author);
 
-  const relatedArticles = getArticlesByCategory(article.category)
-    .filter((a) => a.slug !== article.slug)
-    .slice(0, 3);
+  const relatedArticles = getRelatedArticles(article, 3);
 
   const jsonLd = [
     {
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': 'BlogPosting',
       headline: article.title,
       description: article.description,
       image: [imageUrl],
-      datePublished: isoDate,
-      dateModified: isoDate,
+      datePublished: isoPublished,
+      dateModified: isoUpdated,
       mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
       author: {
-        '@type': 'Organization',
+        '@type': 'Person',
         name: article.author,
-        url: 'https://smartbiz365.site/',
+        url: `${SITE_URL}/about`,
       },
       publisher: {
         '@type': 'Organization',
@@ -112,8 +124,11 @@ export default function ArticleView() {
         type="article"
         url={articleUrl}
         image={imageUrl}
-        publishedAt={isoDate}
+        publishedAt={isoPublished}
+        updatedAt={isoUpdated}
         author={article.author}
+        section={article.category}
+        tags={article.tags}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
@@ -141,13 +156,23 @@ export default function ArticleView() {
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted dark:text-muted-dark">
             <div className="flex items-center gap-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded-md bg-accent/10 font-serif text-sm font-semibold text-accent">
-                S
+                {article.author.charAt(0)}
               </span>
-              <span className="font-medium text-ink dark:text-paper-ink">{article.author}</span>
+              <span>
+                <span className="font-medium text-ink dark:text-paper-ink">{article.author}</span>
+                {authorMeta && (
+                  <span className="block text-xs text-muted dark:text-muted-dark">{authorMeta.role}</span>
+                )}
+              </span>
             </div>
             <span className="flex items-center gap-1.5">
-              <Calendar className="h-4 w-4" /> {formattedDate}
+              <Calendar className="h-4 w-4" /> Published {formattedPublished}
             </span>
+            {wasUpdated && (
+              <span className="flex items-center gap-1.5">
+                <Calendar className="h-4 w-4" /> Updated {formattedUpdated}
+              </span>
+            )}
             <span className="flex items-center gap-1.5">
               <Clock className="h-4 w-4" /> {article.readingTime}
             </span>
@@ -209,6 +234,46 @@ export default function ArticleView() {
                 {article.content}
               </ReactMarkdown>
             </article>
+
+            {article.sources && article.sources.length > 0 && (
+              <section aria-label="Sources and further reading" className="mt-12 border-t border-line pt-8 dark:border-night-line">
+                <h2 className="mb-4 font-serif text-xl font-semibold text-ink dark:text-paper-ink">
+                  Sources &amp; further reading
+                </h2>
+                <ul className="space-y-2.5">
+                  {article.sources.map((source) => (
+                    <li key={source.url}>
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-start gap-1.5 text-[15px] leading-relaxed text-accent hover:text-accent-dark"
+                      >
+                        <span className="underline-offset-2 group-hover:underline">{source.title}</span>
+                        <ExternalLink className="mt-1 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {authorMeta && (
+              <section aria-label="About the author" className="mt-12 flex gap-4 border border-line bg-paper-dim/60 p-6 dark:border-night-line dark:bg-night-dim/60">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-accent/10 font-serif text-lg font-semibold text-accent">
+                  {authorMeta.name.charAt(0)}
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-ink dark:text-paper-ink">
+                    {authorMeta.name} <span className="font-normal text-muted dark:text-muted-dark">· {authorMeta.role}</span>
+                  </p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted dark:text-muted-dark">{authorMeta.bio}</p>
+                  <Link to="/about" className="mt-2 inline-block text-sm font-medium text-accent hover:text-accent-dark">
+                    More about SmartBiz →
+                  </Link>
+                </div>
+              </section>
+            )}
 
             {article.tags?.length > 0 && (
               <div className="mt-12 flex flex-wrap gap-2 border-t border-line pt-8 dark:border-night-line">

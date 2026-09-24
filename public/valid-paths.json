@@ -3,6 +3,7 @@
     "/",
     "/about",
     "/contact",
+    "/editorial-policy",
     "/privacy",
     "/terms",
     "/search"
@@ -14,6 +15,10 @@
     "Guides"
   ],
   "slugs": [
+    "domain-hosting-guide-kenya",
+    "ecommerce-website-kenya-guide",
+    "get-online-reviews-kenya-business",
+    "google-business-profile-setup-guide-kenya",
     "hotel-website-increase-direct-bookings",
     "how-much-does-website-cost-kenya",
     "how-to-get-found-on-google-kenya",
@@ -22,6 +27,7 @@
     "restaurant-website-attract-customers",
     "seo-helps-small-businesses",
     "website-design-eldoret-guide",
+    "website-maintenance-security-basics-kenya",
     "website-vs-facebook-page",
     "what-good-business-website-includes",
     "why-small-business-kenya-needs-website"

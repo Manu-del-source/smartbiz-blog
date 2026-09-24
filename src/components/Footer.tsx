@@ -50,6 +50,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/editorial-policy" className="text-muted transition-colors hover:text-accent dark:text-muted-dark">
+                  Editorial policy
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://smartbiz365.site/"
                   className="text-muted transition-colors hover:text-accent dark:text-muted-dark"

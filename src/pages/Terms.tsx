@@ -7,6 +7,7 @@ export default function Terms() {
       <SEO
         title="Terms of Use"
         description="The terms that govern use of the SmartBiz Blog."
+        url="https://blog.smartbiz365.site/terms"
       />
 
       <div className="border-b border-line dark:border-night-line">
@@ -15,7 +16,7 @@ export default function Terms() {
             Terms of Use
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted dark:text-muted-dark">
-            Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            Last updated: September 24, 2026
           </p>
         </div>
       </div>
