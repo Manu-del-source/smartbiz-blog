@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { ArrowRight, Globe, Mail, MapPin } from 'lucide-react';
+import { ArrowRight, Globe, Mail, MapPin, PenLine } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -8,6 +9,7 @@ export default function Contact() {
       <SEO
         title="Contact SmartBiz"
         description="Get in touch with SmartBiz for professional web design and SEO services in Kenya."
+        url="https://blog.smartbiz365.site/contact"
       />
 
       <div className="border-b border-line dark:border-night-line">
@@ -68,6 +70,35 @@ export default function Contact() {
                 <h3 className="font-semibold text-ink dark:text-paper-ink">Location</h3>
                 <p className="mt-1 text-sm text-muted dark:text-muted-dark">Eldoret, Kenya</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 border border-line p-8 dark:border-night-line md:p-10">
+          <div className="flex flex-col items-start gap-4 sm:flex-row">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
+              <PenLine className="h-5 w-5" />
+            </span>
+            <div>
+              <h2 className="font-serif text-xl font-semibold text-ink dark:text-paper-ink">
+                Feedback about the blog?
+              </h2>
+              <p className="mt-2 leading-relaxed text-muted dark:text-muted-dark">
+                Spotted a factual error, an outdated recommendation, or a broken link in
+                an article? Send the article title and details to{' '}
+                <a
+                  href="mailto:hello@smartbiz365.site"
+                  className="font-medium text-accent hover:text-accent-dark"
+                >
+                  hello@smartbiz365.site
+                </a>{' '}
+                and we will review it. Significant corrections are noted on the
+                article itself — see our{' '}
+                <Link to="/editorial-policy" className="font-medium text-accent hover:text-accent-dark">
+                  editorial policy
+                </Link>{' '}
+                for how we handle updates.
+              </p>
             </div>
           </div>
         </div>

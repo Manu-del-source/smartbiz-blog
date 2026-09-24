@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Keep this list in sync with the static <Route> entries in src/App.tsx.
-const STATIC_PATHS = ['/', '/about', '/contact', '/privacy', '/terms', '/search'];
+const STATIC_PATHS = ['/', '/about', '/contact', '/editorial-policy', '/privacy', '/terms', '/search'];
 
 // Keep this list in sync with src/content/categories.ts.
 const CATEGORIES = ['Web Design', 'SEO', 'Business', 'Guides'];

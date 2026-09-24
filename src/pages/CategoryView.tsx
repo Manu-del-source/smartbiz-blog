@@ -4,7 +4,7 @@ import { getArticlesByCategory } from '../utils/articles';
 import ArticleCard from '../components/ArticleCard';
 import SEO from '../components/SEO';
 import { ChevronRight } from 'lucide-react';
-import { CATEGORIES, getCategoryDescription } from '../content/categories';
+import { CATEGORIES, getCategoryDescription, getCategoryIntro } from '../content/categories';
 
 export default function CategoryView() {
   const { category } = useParams<{ category: string }>();
@@ -16,6 +16,7 @@ export default function CategoryView() {
   const decodedCategory = decodeURIComponent(category);
   const articles = getArticlesByCategory(decodedCategory);
   const description = getCategoryDescription(decodedCategory);
+  const intro = getCategoryIntro(decodedCategory);
   const [featured, ...rest] = articles;
 
   return (
@@ -23,6 +24,7 @@ export default function CategoryView() {
       <SEO
         title={`${decodedCategory} Articles`}
         description={`${description} From the SmartBiz Blog.`}
+        url={`https://blog.smartbiz365.site/category/${encodeURIComponent(decodedCategory)}`}
       />
 
       <div className="border-b border-line dark:border-night-line">
@@ -36,7 +38,7 @@ export default function CategoryView() {
             {decodedCategory}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted dark:text-muted-dark">
-            {description}
+            {intro}
           </p>
           {articles.length > 0 && (
             <p className="mt-4 text-sm font-medium text-muted dark:text-muted-dark">

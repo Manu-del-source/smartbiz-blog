@@ -7,6 +7,7 @@ export default function Privacy() {
       <SEO
         title="Privacy Policy"
         description="How the SmartBiz Blog collects, uses, and protects information from visitors."
+        url="https://blog.smartbiz365.site/privacy"
       />
 
       <div className="border-b border-line dark:border-night-line">
@@ -15,7 +16,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted dark:text-muted-dark">
-            Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            Last updated: September 24, 2026
           </p>
         </div>
       </div>

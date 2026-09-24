@@ -17,6 +17,7 @@ import CategoryView from './pages/CategoryView';
 import Search from './pages/Search';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import EditorialPolicy from './pages/EditorialPolicy';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import NotFound from './pages/NotFound';
@@ -57,6 +58,7 @@ export default function App() {
                 <Route path="/search" element={<Search />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/editorial-policy" element={<EditorialPolicy />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/category/:category" element={<CategoryView />} />

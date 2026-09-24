@@ -2,85 +2,202 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>SmartBiz Blog</title>
-  <description>Professional web design and SEO blog for Kenyan businesses.</description>
-  <link>https://blog.smartbiz365.site</link>
+  <description>Practical insights on web design, SEO, and digital strategy for Kenyan businesses.</description>
+  <link>https://blog.smartbiz365.site/</link>
+  <language>en</language>
+  <lastBuildDate>Thu, 24 Sep 2026 00:00:00 GMT</lastBuildDate>
   <atom:link href="https://blog.smartbiz365.site/rss.xml" rel="self" type="application/rss+xml" />
+  <item>
+    <title><![CDATA[Domain Names and Hosting in Kenya: A Plain-Language Guide]]></title>
+    <description><![CDATA[.co.ke vs .com, how domain registration actually works, what hosting is, and how to avoid losing control of either.]]></description>
+    <link>https://blog.smartbiz365.site/domain-hosting-guide-kenya</link>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/domain-hosting-guide-kenya</guid>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Web Design</category>
+    <category>Domains</category>
+    <category>Hosting</category>
+    <category>Kenya</category>
+    <category>Web Design</category>
+  </item>
+  <item>
+    <title><![CDATA[Selling Online in Kenya: What an E-commerce Website Actually Needs]]></title>
+    <description><![CDATA[The practical parts of online selling for Kenyan businesses: payments, delivery, trust, costs, and how to start lean.]]></description>
+    <link>https://blog.smartbiz365.site/ecommerce-website-kenya-guide</link>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/ecommerce-website-kenya-guide</guid>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Business</category>
+    <category>E-commerce</category>
+    <category>M-Pesa</category>
+    <category>Small Business</category>
+    <category>Kenya</category>
+  </item>
+  <item>
+    <title><![CDATA[How to Get Online Reviews for Your Kenyan Business]]></title>
+    <description><![CDATA[A practical playbook for earning genuine Google reviews: when to ask, what to say, how to respond, and what to avoid.]]></description>
+    <link>https://blog.smartbiz365.site/get-online-reviews-kenya-business</link>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/get-online-reviews-kenya-business</guid>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+    <category>SEO</category>
+    <category>Reviews</category>
+    <category>Google Business Profile</category>
+    <category>Local SEO</category>
+    <category>Kenya</category>
+  </item>
+  <item>
+    <title><![CDATA[Google Business Profile Setup Guide for Kenyan Businesses]]></title>
+    <description><![CDATA[Step-by-step: how to create, verify, and fully complete your free Google Business Profile so customers find you on Search and Maps.]]></description>
+    <link>https://blog.smartbiz365.site/google-business-profile-setup-guide-kenya</link>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/google-business-profile-setup-guide-kenya</guid>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+    <category>SEO</category>
+    <category>Google Business Profile</category>
+    <category>Local SEO</category>
+    <category>SEO</category>
+    <category>Kenya</category>
+  </item>
+  <item>
+    <title><![CDATA[Website Maintenance and Security Basics for Business Owners]]></title>
+    <description><![CDATA[What keeping a website healthy actually involves: updates, backups, HTTPS, passwords, and what a fair maintenance plan covers.]]></description>
+    <link>https://blog.smartbiz365.site/website-maintenance-security-basics-kenya</link>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/website-maintenance-security-basics-kenya</guid>
+    <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Web Design</category>
+    <category>Maintenance</category>
+    <category>Security</category>
+    <category>Web Design</category>
+    <category>Kenya</category>
+  </item>
   <item>
     <title><![CDATA[M-Pesa Integration for Your Website: What Business Owners Need to Know]]></title>
     <description><![CDATA[A plain-language guide to integrating M-Pesa payments into a website via Safaricom's Daraja API, without needing to be a developer.]]></description>
     <link>https://blog.smartbiz365.site/mpesa-integration-for-business-websites</link>
-    <guid>https://blog.smartbiz365.site/mpesa-integration-for-business-websites</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/mpesa-integration-for-business-websites</guid>
     <pubDate>Wed, 23 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Business</category>
+    <category>M-Pesa</category>
+    <category>Daraja API</category>
+    <category>E-commerce</category>
+    <category>Payments</category>
+    <category>Kenya</category>
   </item>
   <item>
     <title><![CDATA[Why SEO Is Worth It for a Small Business]]></title>
     <description><![CDATA[The business case for investing in SEO over paid ads: what compounds over time, what doesn't, and how to think about the trade-off.]]></description>
     <link>https://blog.smartbiz365.site/seo-helps-small-businesses</link>
-    <guid>https://blog.smartbiz365.site/seo-helps-small-businesses</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/seo-helps-small-businesses</guid>
     <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
+    <category>SEO</category>
+    <category>SEO</category>
+    <category>Small Business</category>
+    <category>Digital Marketing</category>
+    <category>Kenya</category>
   </item>
   <item>
     <title><![CDATA[Why Mobile-Friendly Websites Matter for Kenyan Businesses]]></title>
     <description><![CDATA[Kenya's mobile usage data and what it actually means for how a business website should be built, tested, and optimized.]]></description>
     <link>https://blog.smartbiz365.site/mobile-friendly-websites-kenya</link>
-    <guid>https://blog.smartbiz365.site/mobile-friendly-websites-kenya</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/mobile-friendly-websites-kenya</guid>
     <pubDate>Sun, 20 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Web Design</category>
+    <category>Mobile Design</category>
+    <category>Kenya</category>
+    <category>Web Development</category>
+    <category>Performance</category>
   </item>
   <item>
     <title><![CDATA[Website Design in Eldoret: What Local Businesses Should Look For]]></title>
     <description><![CDATA[A practical guide for Eldoret business owners on choosing a web developer, what a good local website needs, and how to get found by nearby customers.]]></description>
     <link>https://blog.smartbiz365.site/website-design-eldoret-guide</link>
-    <guid>https://blog.smartbiz365.site/website-design-eldoret-guide</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/website-design-eldoret-guide</guid>
     <pubDate>Sat, 19 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Web Design</category>
+    <category>Local Business</category>
+    <category>Eldoret</category>
+    <category>Web Development</category>
+    <category>Local SEO</category>
   </item>
   <item>
     <title><![CDATA[How a Website Helps a Restaurant Attract More Customers]]></title>
     <description><![CDATA[Why Kenyan restaurants need more than a delivery-app listing, and what a simple restaurant website should include.]]></description>
     <link>https://blog.smartbiz365.site/restaurant-website-attract-customers</link>
-    <guid>https://blog.smartbiz365.site/restaurant-website-attract-customers</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/restaurant-website-attract-customers</guid>
     <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Guides</category>
+    <category>Restaurants</category>
+    <category>Local Business</category>
+    <category>Web Design</category>
+    <category>Food Delivery</category>
   </item>
   <item>
     <title><![CDATA[How a Hotel Website Can Increase Direct Bookings]]></title>
     <description><![CDATA[Why direct bookings matter more than OTA commissions suggest, and the concrete features a hotel or lodge website needs to win them.]]></description>
     <link>https://blog.smartbiz365.site/hotel-website-increase-direct-bookings</link>
-    <guid>https://blog.smartbiz365.site/hotel-website-increase-direct-bookings</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/hotel-website-increase-direct-bookings</guid>
     <pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Guides</category>
+    <category>Hospitality</category>
+    <category>Hotels</category>
+    <category>Direct Bookings</category>
+    <category>Web Design</category>
   </item>
   <item>
     <title><![CDATA[What Every Good Business Website Should Include]]></title>
     <description><![CDATA[The features that actually matter on a business website in Kenya: from mobile speed and WhatsApp buttons to trust signals and security.]]></description>
     <link>https://blog.smartbiz365.site/what-good-business-website-includes</link>
-    <guid>https://blog.smartbiz365.site/what-good-business-website-includes</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/what-good-business-website-includes</guid>
     <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Web Design</category>
+    <category>Web Design</category>
+    <category>Best Practices</category>
+    <category>Small Business</category>
+    <category>Kenya</category>
   </item>
   <item>
     <title><![CDATA[How to Get Found on Google as a Kenyan Business]]></title>
     <description><![CDATA[A practical, step-by-step local SEO checklist for Kenyan businesses — Google Business Profile, keywords, reviews, and page speed.]]></description>
     <link>https://blog.smartbiz365.site/how-to-get-found-on-google-kenya</link>
-    <guid>https://blog.smartbiz365.site/how-to-get-found-on-google-kenya</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/how-to-get-found-on-google-kenya</guid>
     <pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate>
+    <category>SEO</category>
+    <category>SEO</category>
+    <category>Local SEO</category>
+    <category>Google Business Profile</category>
+    <category>Kenya</category>
   </item>
   <item>
     <title><![CDATA[Website vs. Facebook Page: What's Actually Right for Your Business?]]></title>
     <description><![CDATA[A practical comparison of owning a website versus relying on a Facebook Page or WhatsApp Business, and why most businesses need both.]]></description>
     <link>https://blog.smartbiz365.site/website-vs-facebook-page</link>
-    <guid>https://blog.smartbiz365.site/website-vs-facebook-page</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/website-vs-facebook-page</guid>
     <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Business</category>
+    <category>Social Media</category>
+    <category>Web Design</category>
+    <category>Small Business</category>
+    <category>Digital Strategy</category>
   </item>
   <item>
     <title><![CDATA[How Much Does a Website Cost in Kenya?]]></title>
     <description><![CDATA[A realistic breakdown of what drives website pricing in Kenya, with actual price ranges by project type.]]></description>
     <link>https://blog.smartbiz365.site/how-much-does-website-cost-kenya</link>
-    <guid>https://blog.smartbiz365.site/how-much-does-website-cost-kenya</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/how-much-does-website-cost-kenya</guid>
     <pubDate>Fri, 11 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Web Design</category>
+    <category>Pricing</category>
+    <category>Web Design</category>
+    <category>Kenya</category>
+    <category>Small Business</category>
   </item>
   <item>
     <title><![CDATA[Why Every Small Business in Kenya Needs a Website]]></title>
     <description><![CDATA[What a website gives a small Kenyan business that social media alone can't, and what it realistically costs to get started.]]></description>
     <link>https://blog.smartbiz365.site/why-small-business-kenya-needs-website</link>
-    <guid>https://blog.smartbiz365.site/why-small-business-kenya-needs-website</guid>
+    <guid isPermaLink="true">https://blog.smartbiz365.site/why-small-business-kenya-needs-website</guid>
     <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
+    <category>Business</category>
+    <category>Small Business</category>
+    <category>Kenya</category>
+    <category>Digital Presence</category>
   </item>
 </channel>
 </rss>
