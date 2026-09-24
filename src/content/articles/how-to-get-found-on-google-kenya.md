@@ -1,31 +1,45 @@
 ---
-title: "How to Get Your Business Found on Google in Kenya"
-description: "Having a beautiful website is useless if no one can find it. Search Engine Optimization (SEO) is the process of improvin..."
+title: "How to Get Found on Google as a Kenyan Business"
+description: "A practical, step-by-step local SEO checklist for Kenyan businesses — Google Business Profile, keywords, reviews, and page speed."
 slug: "how-to-get-found-on-google-kenya"
 category: "SEO"
-tags: ["SEO","Google","Local Search"]
+tags: ["SEO","Local SEO","Google Business Profile","Kenya"]
 author: "SmartBiz Team"
 publishedAt: "2026-09-14"
-readingTime: "7 min read"
+readingTime: "3 min read"
 featuredImage: "/placeholder.jpg"
 ---
 
-Having a beautiful website is useless if no one can find it. Search Engine Optimization (SEO) is the process of improving your website so it ranks higher on Google when people search for your services.
+Ranking on Google isn't luck, and for most local Kenyan businesses it also isn't primarily about competing on generic, high-volume keywords — it's about a handful of specific, doable steps that most competitors haven't fully done. Here's the actual checklist, in the order it matters most.
 
-## 1. Claim Your Google Business Profile
+## 1. Claim and Fully Complete Your Google Business Profile
 
-For local businesses, this is non-negotiable. Claiming your profile allows you to appear in Google Maps and local search results. Make sure your address, phone number, and hours are accurate.
+This is the single highest-leverage step for any business with a physical location or service area, and it's free. A complete profile means: accurate business name, category, hours (including public holidays), your real address pinned correctly on the map, a working phone number, and a genuine description of what you do. Businesses that only fill in half the fields are leaving an easy advantage on the table.
 
-## 2. Optimize Your Website Content
+## 2. Add Real Photos, Regularly
 
-Use the words your customers are searching for. If you are a web designer in Eldoret, make sure those terms naturally appear in your page titles, headings, and content.
+Profiles with recent, genuine photos of the actual premises, products, or team consistently perform better than ones with no photos or old stock images. This doesn't need to be elaborate — a few phone photos updated every month or two is enough to signal an active, real business.
 
-## 3. Ensure Your Site is Fast and Mobile-Friendly
+## 3. Get Genuine Reviews, and Respond to Them
 
-Google penalizes slow websites and websites that are hard to use on mobile phones. Since the majority of internet users in Kenya are on mobile devices, mobile optimization is crucial.
+Reviews are one of the strongest local ranking signals, and they're also often the deciding factor for a customer choosing between two similar options. Ask satisfied customers directly for a review rather than hoping it happens organically, and respond to reviews — including negative ones — professionally and promptly.
 
-## 4. Build Quality Backlinks
+## 4. Use Local Keywords Naturally on Your Website
 
-When other reputable websites link to your site, Google sees it as a vote of confidence. Partner with local directories, news sites, or complementary businesses.
+Your website's text should actually mention your town or neighborhood and what you do, in normal sentences — "SmartBiz builds websites for businesses in Eldoret" ranks for different searches than a generic "We build websites" with no location mentioned anywhere. This applies to page titles and headings especially, not just body text.
 
-SEO is a long-term strategy, but it offers the best return on investment. [Need help optimizing your site? See what SmartBiz can do for you](https://smartbiz365.site/).
+## 5. Fix Your Page Speed, Especially on Mobile
+
+Google evaluates ranking primarily based on mobile performance, and a slow site is a real disadvantage — not just for user experience, but for where you show up in results at all. Compressed images and a lightweight page are an SEO tactic, not just a design preference.
+
+## 6. Get Listed on Relevant Local Directories
+
+Consistent business information (same name, address, and phone number) across other directories and citation sites reinforces your legitimacy to Google. Inconsistent details across different listings — an old phone number on one, a slightly different name on another — actively works against you.
+
+## 7. Set Up Google Search Console
+
+This free tool shows you which searches are actually bringing people to your site, which pages have issues, and whether Google can properly index your content. Most small business sites never check it, which means most small business owners are optimizing blind.
+
+None of these steps is complicated on its own — the businesses that actually rank well are usually just the ones that did all seven consistently, rather than doing one impressively and ignoring the rest.
+
+[SmartBiz builds SEO fundamentals into every website from the start](https://smartbiz365.site/).

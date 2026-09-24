@@ -194,6 +194,16 @@ export default function ArticleView() {
                       sizes="(max-width: 768px) 100vw, 768px"
                     />
                   ),
+                  a: ({ href, children }) => {
+                    if (href && href.startsWith('/')) {
+                      return <Link to={href}>{children}</Link>;
+                    }
+                    return (
+                      <a href={href} target="_blank" rel="noopener noreferrer">
+                        {children}
+                      </a>
+                    );
+                  },
                 }}
               >
                 {article.content}

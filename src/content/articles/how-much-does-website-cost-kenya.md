@@ -1,30 +1,49 @@
 ---
 title: "How Much Does a Website Cost in Kenya?"
-description: "One of the most common questions we get is, 'How much does a website cost?' The truth is, the cost of website design in ..."
+description: "A realistic breakdown of what drives website pricing in Kenya, with actual price ranges by project type."
 slug: "how-much-does-website-cost-kenya"
 category: "Web Design"
-tags: ["Pricing","Web Development","Budget"]
+tags: ["Pricing","Web Design","Kenya","Small Business"]
 author: "SmartBiz Team"
 publishedAt: "2026-09-11"
-readingTime: "6 min read"
+readingTime: "3 min read"
 featuredImage: "/placeholder.jpg"
 ---
 
-One of the most common questions we get is, "How much does a website cost?" The truth is, the cost of website design in Kenya varies widely based on your specific needs, the complexity of the site, and the expertise of the developer.
+"How much does a website cost?" doesn't have one honest answer, because a landing page with five sections of text and an e-commerce store with M-Pesa checkout, inventory management, and delivery tracking are not the same project — even though they're both technically "a website." What follows are the real ranges we quote, and why the price moves between them.
 
-## The Basic Brochure Website
+## What Actually Drives the Price
 
-For a simple 3-to-5 page website (Home, About, Services, Contact), prices typically range from KES 20,000 to KES 50,000. These are ideal for small service businesses that just need an online presence.
+- **Number of pages and complexity of design** — a simple one-page site costs far less than a multi-page site with custom layouts for each section.
+- **Functionality** — a booking system, e-commerce checkout, M-Pesa/Daraja payment integration, or a customer login area all add development time beyond a purely informational site.
+- **Content** — whether you're providing finished copy and photos, or need those written and sourced as part of the project.
+- **Ongoing costs** — a domain name and hosting are annual costs on top of the build (typically a few thousand shillings a year combined), and most businesses also want some form of ongoing maintenance or support.
 
-## E-commerce and Advanced Sites
+## Realistic Price Ranges
 
-If you want to sell products online, accept M-Pesa payments, or have custom booking systems, the cost increases. E-commerce websites can range from KES 60,000 to KES 150,000 or more, depending on the number of products and custom features.
+These are SmartBiz's own current published rates, shared as a realistic reference point rather than a universal price list — other developers may price differently based on their own process and experience:
 
-## What Influences the Cost?
+| Project Type | Typical Price |
+|---|---|
+| Landing Page (single page) | KES 15,000 |
+| Business Website (multi-page) | KES 30,000 |
+| Advanced Website (custom features) | KES 50,000 |
+| E-commerce Store | KES 60,000 |
+| Custom SaaS / Business System | From KES 100,000 |
+| Ongoing Maintenance | KES 5,000/month |
+| Hourly Work | KES 2,000/hour |
 
-1. **Domain and Hosting:** Annual fees for keeping your site online.
-2. **Design Quality:** Custom designs cost more than templates but offer better branding.
-3. **SEO Optimization:** A site built to rank on Google requires more work and strategy.
-4. **Maintenance:** Ongoing support and updates.
+## Why the Cheapest Quote Isn't Always the Best Value
 
-At SmartBiz, we provide transparent pricing and solutions tailored to your budget. [Need a professional website for your business? Contact us for a quote](https://smartbiz365.site/).
+A very low quote often means one of a few things: a template site with minimal customization, no real SEO setup, no mobile optimization, or no support once the site is delivered. That's not automatically a bad choice for a very small budget — but it's worth knowing what you're trading away, rather than discovering it later when the site doesn't rank on Google or doesn't work properly on a phone.
+
+## Questions Worth Asking Before You Compare Quotes
+
+1. Does the price include mobile optimization and basic SEO setup, or are those extra?
+2. Who owns the domain and hosting account after the project ends?
+3. What happens if I need changes after launch — is there a support period included?
+4. Is the quoted price fixed, or does it commonly grow with "extras" during the project?
+
+Getting clear answers to these makes two very different quotes actually comparable, instead of just picking the smaller number.
+
+[Get a clear, itemized quote from SmartBiz](https://smartbiz365.site/).
