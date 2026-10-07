@@ -1,17 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(?<slug>[^/]+)$",
-      "dest": "/$slug/index.html"
+      "source": "/category/:category",
+      "destination": "/category/:category/index.html"
     },
     {
-      "src": "/category/(?<category>[^/]+)$",
-      "dest": "/category/$category/index.html"
+      "source": "/:slug",
+      "destination": "/:slug/index.html"
     },
     {
-      "src": "/.*",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
