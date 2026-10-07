@@ -3,11 +3,11 @@
   "rewrites": [
     {
       "source": "/category/:category",
-      "destination": "/category/:category/index.html"
+      "destination": "/category/:category.html"
     },
     {
       "source": "/:slug",
-      "destination": "/:slug/index.html"
+      "destination": "/:slug.html"
     },
     {
       "source": "/(.*)",
