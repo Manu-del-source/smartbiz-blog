@@ -12,7 +12,7 @@ const validPaths = JSON.parse(
 const paths = [
   '/',
   ...validPaths.categories.map((category) => `/category/${encodeURIComponent(category)}`),
-  ...validPaths.articles.map((slug) => `/${slug}`),
+  ...validPaths.slugs.map((slug) => `/${slug}`),
   '/about',
   '/contact',
   '/editorial-policy',
