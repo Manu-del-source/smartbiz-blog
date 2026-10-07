@@ -30,9 +30,14 @@ for (const route of paths) {
     `  <link rel="canonical" href="${canonical}" />\n  </head>`,
   );
 
-  const outputDir = path.join(dist, normalized === '/' ? '' : normalized.slice(1));
-  fs.mkdirSync(outputDir, { recursive: true });
-  fs.writeFileSync(path.join(outputDir, 'index.html'), html);
+  if (normalized === '/') {
+    fs.writeFileSync(indexPath, html);
+    continue;
+  }
+
+  const outputPath = path.join(dist, `${normalized.slice(1)}.html`);
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, html);
 }
 
 console.log(`Generated canonical HTML for ${paths.length} routes.`);
