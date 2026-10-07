@@ -2,10 +2,15 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "/(?<slug>[^/]+)$",
+      "dest": "/$slug/index.html"
     },
     {
-      "src": "/(.*)",
+      "src": "/category/(?<category>[^/]+)$",
+      "dest": "/category/$category/index.html"
+    },
+    {
+      "src": "/.*",
       "dest": "/index.html"
     }
   ]
