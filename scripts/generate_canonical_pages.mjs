@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import fm from 'front-matter';
 
 const dist = path.resolve('dist');
 const indexPath = path.join(dist, 'index.html');
+const articlesDir = path.resolve('src/content/articles');
 const baseUrl = 'https://blog.smartbiz365.site';
 
 const validPaths = JSON.parse(
@@ -22,13 +24,78 @@ const paths = [
 
 const template = fs.readFileSync(indexPath, 'utf8');
 
-for (const route of paths) {
-  const normalized = route === '/' ? '/' : route.replace(/\/+$/, '');
-  const canonical = `${baseUrl}${normalized}`;
-  const html = template.replace(
-    '</head>',
-    `  <link rel="canonical" href="${canonical}" />\n  </head>`,
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function upsertMeta(html, attribute, key, content) {
+  const escapedKey = escapeRegex(key);
+  const pattern = new RegExp(
+    `<meta\\s+[^>]*\\b${attribute}=["']${escapedKey}["'][^>]*>`,
+    'i',
   );
+  const tag = `<meta ${attribute}="${key}" content="${escapeHtml(content)}" />`;
+
+  if (pattern.test(html)) {
+    return html.replace(pattern, tag);
+  }
+
+  return html.replace('</head>', `  ${tag}\\n  </head>`);
+}
+
+function upsertCanonical(html, canonical) {
+  const tag = `<link rel="canonical" href="${escapeHtml(canonical)}" />`;
+  const pattern = /<link\\s+[^>]*rel=["']canonical["'][^>]*>/i;
+
+  if (pattern.test(html)) {
+    return html.replace(pattern, tag);
+  }
+
+  return html.replace('</head>', `  ${tag}\\n  </head>`);
+}
+
+function getArticleMetadata(slug) {
+  const articlePath = path.join(articlesDir, `${slug}.md`);
+  if (!fs.existsSync(articlePath)) return null;
+
+  const parsed = fm(fs.readFileSync(articlePath, 'utf8'));
+  const { title, description } = parsed.attributes || {};
+  if (!title || !description) return null;
+
+  return { title, description };
+}
+
+for (const route of paths) {
+  const normalized = route === '/' ? '/' : route.replace(/\\/+$/, '');
+  const canonical = `${baseUrl}${normalized}`;
+  let html = template;
+
+  // Generate route-specific metadata in the static HTML delivered to crawlers.
+  // React Helmet still manages metadata during client-side navigation.
+  if (normalized !== '/' && !normalized.startsWith('/category/')) {
+    const slug = normalized.slice(1);
+    const article = getArticleMetadata(slug);
+
+    if (article) {
+      html = html.replace(/<title>[\\s\\S]*?<\\/title>/i, `<title>${escapeHtml(article.title)}</title>`);
+      html = upsertMeta(html, 'name', 'description', article.description);
+      html = upsertMeta(html, 'property', 'og:title', article.title);
+      html = upsertMeta(html, 'property', 'og:description', article.description);
+      html = upsertMeta(html, 'property', 'og:type', 'article');
+      html = upsertMeta(html, 'name', 'twitter:title', article.title);
+      html = upsertMeta(html, 'name', 'twitter:description', article.description);
+    }
+  }
+
+  html = upsertCanonical(html, canonical);
 
   if (normalized === '/') {
     fs.writeFileSync(indexPath, html);
@@ -40,4 +107,4 @@ for (const route of paths) {
   fs.writeFileSync(outputPath, html);
 }
 
-console.log(`Generated canonical HTML for ${paths.length} routes.`);
+console.log(`Generated canonical and route-specific SEO metadata for ${paths.length} routes.`);
