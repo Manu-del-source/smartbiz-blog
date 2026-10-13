@@ -1,12 +1,12 @@
 ---
-title: "Why SEO Is Worth It for a Small Business"
-description: "The business case for investing in SEO over paid ads: what compounds over time, what doesn't, and how to think about the trade-off."
+title: "Is SEO Worth It for Small Businesses? A Practical Guide"
+description: "Is SEO worth it for small businesses? Learn the benefits, costs, realistic timelines, and practical ways Kenyan businesses can attract customers through Google Search."
 slug: "seo-helps-small-businesses"
 category: "SEO"
 tags: ["SEO", "Small Business", "Digital Marketing", "Kenya"]
 author: "Emmanuel Kiptoo"
 publishedAt: "2026-09-22"
-updatedAt: "2026-09-24"
+updatedAt: "2026-10-13"
 readingTime: "6 min read"
 featuredImage: "/placeholder.jpg"
 sources:
@@ -17,6 +17,8 @@ sources:
   - title: "Google Business Profile — get listed on Google"
     url: "https://business.google.com/"
 ---
+
+**Yes, SEO can be worth it for small businesses when you want customers to find you through Google over the long term.** It takes time and consistent work, but useful website content, a complete Google Business Profile, and genuine customer reviews can keep attracting enquiries after the initial work is done. If you need customers immediately, paid ads and direct outreach may be faster while SEO builds.
 
 If you've ever compared running Google or Facebook ads against investing in SEO, the ads probably looked like the faster win. In the short term, they usually are: you pay, traffic arrives the same day. The trade-off most business owners don't see clearly until later is what happens when you stop paying — and what each shilling bought you in the long run.
 
