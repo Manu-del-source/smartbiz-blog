@@ -13,8 +13,8 @@ const validPaths = JSON.parse(
 
 const paths = [
   '/',
-  ...validPaths.categories.map((category) => `/category/${encodeURIComponent(category)}`),
-  ...validPaths.slugs.map((slug) => `/${slug}`),
+  ...validPaths.categories.map((category) => '/category/' + encodeURIComponent(category)),
+  ...validPaths.slugs.map((slug) => '/' + slug),
   '/about',
   '/contact',
   '/editorial-policy',
@@ -32,60 +32,54 @@ function escapeHtml(value) {
     .replace(/>/g, '&gt;');
 }
 
-function escapeRegex(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
 function upsertMeta(html, attribute, key, content) {
-  const escapedKey = escapeRegex(key);
   const pattern = new RegExp(
-    `<meta\\s+[^>]*\\b${attribute}=["']${escapedKey}["'][^>]*>`,
+    "<meta\\s+[^>]*\\b" + attribute + "=[\\"']" + key + "[\\"'][^>]*>",
     'i',
   );
-  const tag = `<meta ${attribute}="${key}" content="${escapeHtml(content)}" />`;
+  const tag = '<meta ' + attribute + '="' + key + '" content="' + escapeHtml(content) + '" />';
 
   if (pattern.test(html)) {
     return html.replace(pattern, tag);
   }
 
-  return html.replace('</head>', `  ${tag}\\n  </head>`);
+  return html.replace('</head>', '  ' + tag + '\n  </head>');
 }
 
 function upsertCanonical(html, canonical) {
-  const tag = `<link rel="canonical" href="${escapeHtml(canonical)}" />`;
-  const pattern = /<link\\s+[^>]*rel=["']canonical["'][^>]*>/i;
+  const tag = '<link rel="canonical" href="' + escapeHtml(canonical) + '" />';
+  const pattern = /<link\s+[^>]*rel=["']canonical["'][^>]*>/i;
 
   if (pattern.test(html)) {
     return html.replace(pattern, tag);
   }
 
-  return html.replace('</head>', `  ${tag}\\n  </head>`);
+  return html.replace('</head>', '  ' + tag + '\n  </head>');
 }
 
 function getArticleMetadata(slug) {
-  const articlePath = path.join(articlesDir, `${slug}.md`);
+  const articlePath = path.join(articlesDir, slug + '.md');
   if (!fs.existsSync(articlePath)) return null;
 
   const parsed = fm(fs.readFileSync(articlePath, 'utf8'));
-  const { title, description } = parsed.attributes || {};
-  if (!title || !description) return null;
+  const attrs = parsed.attributes || {};
+  if (!attrs.title || !attrs.description) return null;
 
-  return { title, description };
+  return { title: attrs.title, description: attrs.description };
 }
 
 for (const route of paths) {
-  const normalized = route === '/' ? '/' : route.replace(/\\/+$/, '');
-  const canonical = `${baseUrl}${normalized}`;
+  const normalized = route === '/' ? '/' : route.replace(/\/+$/, '');
+  const canonical = baseUrl + normalized;
   let html = template;
 
-  // Generate route-specific metadata in the static HTML delivered to crawlers.
-  // React Helmet still manages metadata during client-side navigation.
+  // Put article-specific metadata in the static HTML delivered to crawlers.
+  // React Helmet continues to manage metadata during client-side navigation.
   if (normalized !== '/' && !normalized.startsWith('/category/')) {
-    const slug = normalized.slice(1);
-    const article = getArticleMetadata(slug);
+    const article = getArticleMetadata(normalized.slice(1));
 
     if (article) {
-      html = html.replace(/<title>[\\s\\S]*?<\\/title>/i, `<title>${escapeHtml(article.title)}</title>`);
+      html = html.replace(/<title>[\s\S]*?<\/title>/i, '<title>' + escapeHtml(article.title) + '</title>');
       html = upsertMeta(html, 'name', 'description', article.description);
       html = upsertMeta(html, 'property', 'og:title', article.title);
       html = upsertMeta(html, 'property', 'og:description', article.description);
@@ -102,9 +96,9 @@ for (const route of paths) {
     continue;
   }
 
-  const outputPath = path.join(dist, `${normalized.slice(1)}.html`);
+  const outputPath = path.join(dist, normalized.slice(1) + '.html');
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   fs.writeFileSync(outputPath, html);
 }
 
-console.log(`Generated canonical and route-specific SEO metadata for ${paths.length} routes.`);
+console.log('Generated canonical and route-specific SEO metadata for ' + paths.length + ' routes.');
