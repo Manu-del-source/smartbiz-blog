@@ -34,7 +34,7 @@ function escapeHtml(value) {
 
 function upsertMeta(html, attribute, key, content) {
   const pattern = new RegExp(
-    "<meta\\s+[^>]*\\b" + attribute + "=[\\"']" + key + "[\\"'][^>]*>",
+    "<meta\\s+[^>]*\\b" + attribute + "=\"" + key + "\"[^>]*>",
     'i',
   );
   const tag = '<meta ' + attribute + '="' + key + '" content="' + escapeHtml(content) + '" />';
