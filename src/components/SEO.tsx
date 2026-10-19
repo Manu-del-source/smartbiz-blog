@@ -97,7 +97,12 @@ export default function SEO({
     const existingTags = Array.from(document.head.querySelectorAll<HTMLMetaElement>('meta[property="article:tag"]'));
     existingTags.forEach((tag) => tag.remove());
     if (type === 'article') {
-      for (const tag of tags) upsertMeta('property', 'article:tag', tag);
+      for (const tag of tags) {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', 'article:tag');
+        meta.content = tag;
+        document.head.appendChild(meta);
+      }
     }
   }, [fullTitle, description, url, image, type, publishedAt, updatedAt, author, section, tags, noindex]);
 
