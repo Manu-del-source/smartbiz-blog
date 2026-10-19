@@ -1,14 +1,9 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 interface SEOProps {
   title: string;
   description: string;
-  /**
-   * Canonical URL of this page. Every indexable page must pass its own URL.
-   * Omit only for non-indexable screens (e.g. the 404 page), where no
-   * canonical is emitted.
-   */
+  /** Canonical URL of this page. Omit for non-indexable screens such as 404. */
   url?: string;
   image?: string;
   type?: 'website' | 'article';
@@ -17,11 +12,36 @@ interface SEOProps {
   author?: string;
   section?: string;
   tags?: string[];
-  /**
-   * Set for utility-only screens (search, 404) that carry no publisher
-   * content and must not be indexed.
-   */
   noindex?: boolean;
+}
+
+function upsertMeta(attribute: 'name' | 'property', key: string, content: string) {
+  const selector = 'meta[' + attribute + '="' + CSS.escape(key) + '"]';
+  const matches = Array.from(document.head.querySelectorAll<HTMLMetaElement>(selector));
+  const meta = matches.shift() ?? document.createElement('meta');
+  for (const duplicate of matches) duplicate.remove();
+  meta.setAttribute(attribute, key);
+  meta.content = content;
+  if (!meta.isConnected) document.head.appendChild(meta);
+}
+
+function removeMeta(attribute: 'name' | 'property', key: string) {
+  document.head.querySelectorAll('meta[' + attribute + '="' + CSS.escape(key) + '"]').forEach((node) => node.remove());
+}
+
+function upsertCanonical(url?: string) {
+  const links = Array.from(document.head.querySelectorAll<HTMLLinkElement>('link[rel="canonical"]'));
+  const canonical = links.shift() ?? document.createElement('link');
+  for (const duplicate of links) duplicate.remove();
+
+  if (!url) {
+    canonical.remove();
+    return;
+  }
+
+  canonical.rel = 'canonical';
+  canonical.href = url;
+  if (!canonical.isConnected) document.head.appendChild(canonical);
 }
 
 export default function SEO({
@@ -34,49 +54,52 @@ export default function SEO({
   updatedAt,
   author,
   section,
-  tags,
+  tags = [],
   noindex = false,
 }: SEOProps) {
   const siteName = 'SmartBiz Blog';
-  const fullTitle = `${title} | ${siteName}`;
+  const fullTitle = title.endsWith(' | ' + siteName) ? title : title + ' | ' + siteName;
 
-  return (
-    <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+  useEffect(() => {
+    document.title = fullTitle;
+    upsertMeta('name', 'description', description);
+    upsertMeta('property', 'og:title', fullTitle);
+    upsertMeta('property', 'og:description', description);
+    upsertMeta('property', 'og:type', type);
+    upsertMeta('property', 'og:image', image);
+    upsertMeta('property', 'og:image:alt', fullTitle);
+    upsertMeta('property', 'og:site_name', siteName);
+    upsertMeta('name', 'twitter:card', 'summary_large_image');
+    upsertMeta('name', 'twitter:title', fullTitle);
+    upsertMeta('name', 'twitter:description', description);
+    upsertMeta('name', 'twitter:image', image);
 
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={type} />
-      {url && <meta property="og:url" content={url} />}
-      <meta property="og:image" content={image} />
-      <meta property="og:image:alt" content={fullTitle} />
-      <meta property="og:site_name" content={siteName} />
+    if (url && !noindex) upsertMeta('property', 'og:url', url);
+    else removeMeta('property', 'og:url');
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+    if (noindex) upsertMeta('name', 'robots', 'noindex, nofollow');
+    else removeMeta('name', 'robots');
 
-      {type === 'article' && publishedAt && (
-        <meta property="article:published_time" content={publishedAt} />
-      )}
-      {type === 'article' && updatedAt && (
-        <meta property="article:modified_time" content={updatedAt} />
-      )}
-      {type === 'article' && author && (
-        <meta property="article:author" content={author} />
-      )}
-      {type === 'article' && section && (
-        <meta property="article:section" content={section} />
-      )}
-      {type === 'article' &&
-        tags?.map((tag) => (
-          <meta key={tag} property="article:tag" content={tag} />
-        ))}
+    upsertCanonical(noindex ? undefined : url);
 
-      {url && !noindex && <link rel="canonical" href={url} />}
-    </Helmet>
-  );
+    const articleMeta: Array<[string, string, string | undefined]> = [
+      ['article:published_time', publishedAt ?? '', type === 'article' ? publishedAt : undefined],
+      ['article:modified_time', updatedAt ?? '', type === 'article' ? updatedAt : undefined],
+      ['article:author', author ?? '', type === 'article' ? author : undefined],
+      ['article:section', section ?? '', type === 'article' ? section : undefined],
+    ];
+
+    for (const [key, , value] of articleMeta) {
+      if (value) upsertMeta('property', key, value);
+      else removeMeta('property', key);
+    }
+
+    const existingTags = Array.from(document.head.querySelectorAll<HTMLMetaElement>('meta[property="article:tag"]'));
+    existingTags.forEach((tag) => tag.remove());
+    if (type === 'article') {
+      for (const tag of tags) upsertMeta('property', 'article:tag', tag);
+    }
+  }, [fullTitle, description, url, image, type, publishedAt, updatedAt, author, section, tags, noindex]);
+
+  return null;
 }
