@@ -33,9 +33,8 @@ function escapeHtml(value) {
 }
 
 function upsertMeta(html, attribute, key, content) {
-  const escapedKey = key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const pattern = new RegExp(
-    '<meta\\s+[^>]*\\b' + attribute + '=["\\']' + escapedKey + '["\\'][^>]*>',
+    '<meta\\s+[^>]*\\b' + attribute + '="' + key + '"[^>]*>',
     'gi',
   );
   const tag = '<meta ' + attribute + '="' + key + '" content="' + escapeHtml(content) + '" />';
@@ -47,15 +46,13 @@ function upsertMeta(html, attribute, key, content) {
     return tag;
   });
 
-  if (!inserted) {
-    html = html.replace('</head>', '  ' + tag + '\\n  </head>');
-  }
+  if (!inserted) html = html.replace('</head>', '  ' + tag + '\n  </head>');
   return html;
 }
 
 function upsertCanonical(html, canonical) {
   const tag = '<link rel="canonical" href="' + escapeHtml(canonical) + '" />';
-  const pattern = /<link\\s+[^>]*rel=["\\']canonical["\\'][^>]*>/gi;
+  const pattern = /<link\s+[^>]*rel=["']canonical["'][^>]*>/gi;
   let inserted = false;
 
   html = html.replace(pattern, () => {
@@ -64,15 +61,13 @@ function upsertCanonical(html, canonical) {
     return tag;
   });
 
-  if (!inserted) {
-    html = html.replace('</head>', '  ' + tag + '\\n  </head>');
-  }
+  if (!inserted) html = html.replace('</head>', '  ' + tag + '\n  </head>');
   return html;
 }
 
 function upsertTitle(html, title) {
   const tag = '<title>' + escapeHtml(title) + '</title>';
-  const pattern = /<title>[\\s\\S]*?<\\/title>/gi;
+  const pattern = /<title>[\s\S]*?<\/title>/gi;
   let inserted = false;
 
   html = html.replace(pattern, () => {
@@ -81,9 +76,7 @@ function upsertTitle(html, title) {
     return tag;
   });
 
-  if (!inserted) {
-    html = html.replace('</head>', '  ' + tag + '\\n  </head>');
-  }
+  if (!inserted) html = html.replace('</head>', '  ' + tag + '\n  </head>');
   return html;
 }
 
@@ -99,12 +92,10 @@ function getArticleMetadata(slug) {
 }
 
 for (const route of paths) {
-  const normalized = route === '/' ? '/' : route.replace(/\\/+$/, '');
+  const normalized = route === '/' ? '/' : route.replace(/\/+$/, '');
   const canonical = baseUrl + normalized;
   let html = template;
 
-  // Generate one canonical and one title/meta tag for each static route.
-  // Client-side navigation uses the shared SEO component.
   if (normalized !== '/' && !normalized.startsWith('/category/')) {
     const article = getArticleMetadata(normalized.slice(1));
 
