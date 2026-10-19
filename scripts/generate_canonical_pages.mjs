@@ -109,7 +109,7 @@ for (const route of paths) {
     const article = getArticleMetadata(normalized.slice(1));
 
     if (article) {
-      upsertTitle(html, article.title + ' | SmartBiz Blog');
+      html = upsertTitle(html, article.title + ' | SmartBiz Blog');
       html = upsertMeta(html, 'name', 'description', article.description);
       html = upsertMeta(html, 'property', 'og:title', article.title + ' | SmartBiz Blog');
       html = upsertMeta(html, 'property', 'og:description', article.description);
